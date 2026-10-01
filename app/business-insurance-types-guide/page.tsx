@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Insurance Types Guide 2026: What You Actually Need | LoanPay Business",
@@ -26,6 +28,10 @@ export default function BizInsurancePage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -47,6 +53,7 @@ export default function BizInsurancePage() {
             property into a Business Owner&apos;s Policy (BOP) at a discount.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">What coverage costs and what sets the price</h2>
@@ -144,25 +151,27 @@ export default function BizInsurancePage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does my LLC make insurance unnecessary?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does my LLC make insurance unnecessary?</summary>
               <p className="mt-1">No. The LLC shields personal assets from business debts; insurance pays the claims themselves. You need both.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Home-based — covered by homeowners?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Home-based — covered by homeowners?</summary>
               <p className="mt-1">Rarely for business liability, inventory, or client injuries. Add a home-business endorsement or standalone BOP.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is a BOP?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is a BOP?</summary>
               <p className="mt-1">A Business Owner&apos;s Policy bundling general liability with commercial property — cheaper than buying each alone for qualifying small firms.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How much liability is enough?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How much liability is enough?</summary>
               <p className="mt-1">$1M per occurrence / $2M aggregate is the common small-business starting point; contracts and risk profile move it up.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -177,6 +186,22 @@ export default function BizInsurancePage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Insurance Types Guide 2026: What You Actually Need | LoanPay Business", description: "Business insurance in 2026: general liability, professional liability, workers' comp, commercial auto, property, cyber, and BOPs — with cost signals and a retail example.", url: "https://business.loanpaylogic.com/business-insurance-types-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Does my LLC make insurance unnecessary?","answer":"No. The LLC shields personal assets from business debts; insurance pays the claims themselves. You need both."}, {"question":"Home-based — covered by homeowners?","answer":"Rarely for business liability, inventory, or client injuries. Add a home-business endorsement or standalone BOP."}, {"question":"What is a BOP?","answer":"A Business Owner’s Policy bundling general liability with commercial property — cheaper than buying each alone for qualifying small firms."}, {"question":"How much liability is enough?","answer":"$1M per occurrence / $2M aggregate is the common small-business starting point; contracts and risk profile move it up."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Insurance Types Guide 2026: What You Actually Need | LoanPay Business", url: "https://business.loanpaylogic.com/business-insurance-types-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

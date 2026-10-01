@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Bookkeeping Basics Guide 2026: Clean Books, Calm Taxes | LoanPay Business",
@@ -26,6 +28,10 @@ export default function BookkeepingPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -45,6 +51,7 @@ export default function BookkeepingPage() {
             revenue to when it is earned.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">The weekly and monthly rhythm</h2>
@@ -139,25 +146,27 @@ export default function BookkeepingPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Cash or accrual basis?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Cash or accrual basis?</summary>
               <p className="mt-1">Most small service businesses use cash basis for simplicity. Inventory-heavy firms and larger businesses often must use accrual — ask your accountant.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">DIY or hire a bookkeeper?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">DIY or hire a bookkeeper?</summary>
               <p className="mt-1">DIY with weekly discipline until roughly $100K revenue or first hire; then monthly professional help usually pays for itself.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long to keep receipts?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long to keep receipts?</summary>
               <p className="mt-1">At least three years from filing; six if income may be understated. Digital copies with purpose notes are fine if legible.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I need accounting software day one?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I need accounting software day one?</summary>
               <p className="mt-1">A simple app beats a spreadsheet once transactions exceed ~30 per month or you invoice customers. Start simple, upgrade when books lag.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -172,6 +181,22 @@ export default function BookkeepingPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Bookkeeping Basics Guide 2026: Clean Books, Calm Taxes | LoanPay Business", description: "Bookkeeping basics for 2026: chart of accounts, cash vs. accrual, weekly reconciliation rhythm, receipt rules, and records that survive audits and loan reviews.", url: "https://business.loanpaylogic.com/bookkeeping-basics-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Cash or accrual basis?","answer":"Most small service businesses use cash basis for simplicity. Inventory-heavy firms and larger businesses often must use accrual — ask your accountant."}, {"question":"DIY or hire a bookkeeper?","answer":"DIY with weekly discipline until roughly $100K revenue or first hire; then monthly professional help usually pays for itself."}, {"question":"How long to keep receipts?","answer":"At least three years from filing; six if income may be understated. Digital copies with purpose notes are fine if legible."}, {"question":"Do I need accounting software day one?","answer":"A simple app beats a spreadsheet once transactions exceed ~30 per month or you invoice customers. Start simple, upgrade when books lag."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Bookkeeping Basics Guide 2026: Clean Books, Calm Taxes | LoanPay Business", url: "https://business.loanpaylogic.com/bookkeeping-basics-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

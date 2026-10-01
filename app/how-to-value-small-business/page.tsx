@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "How to Value a Small Business 2026: SDE, Comps & DCF | LoanPay Business",
@@ -26,6 +28,10 @@ export default function ValuationPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -46,6 +52,7 @@ export default function ValuationPage() {
             . Triangulate all three; any single method lies in special cases.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Add-backs: where value hides</h2>
@@ -145,25 +152,27 @@ export default function ValuationPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Revenue multiple or SDE multiple?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Revenue multiple or SDE multiple?</summary>
               <p className="mt-1">SDE multiples rule Main Street deals because margins vary wildly. Revenue multiples suit high-growth or SaaS niches with standard margins.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does inventory add to the price?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does inventory add to the price?</summary>
               <p className="mt-1">Usually yes, at cost on top of the cash-flow value — define the count date and valuation method in the purchase agreement.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Broker or sell myself?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Broker or sell myself?</summary>
               <p className="mt-1">Brokers (often ~8–12% on small deals) widen the buyer pool and guard confidentiality; FSBO works for known-buyer transfers with counsel.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How do earnouts affect value?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do earnouts affect value?</summary>
               <p className="mt-1">They bridge gaps when buyers doubt sustainability — part guaranteed, part contingent. Discount contingent dollars heavily in your head.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -178,6 +187,22 @@ export default function ValuationPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "How to Value a Small Business 2026: SDE, Comps & DCF | LoanPay Business", description: "Value a small business in 2026: seller's discretionary earnings multiples, comparable sales, asset and DCF approaches, add-backs, and a coffee-shop worked example.", url: "https://business.loanpaylogic.com/how-to-value-small-business" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Revenue multiple or SDE multiple?","answer":"SDE multiples rule Main Street deals because margins vary wildly. Revenue multiples suit high-growth or SaaS niches with standard margins."}, {"question":"Does inventory add to the price?","answer":"Usually yes, at cost on top of the cash-flow value — define the count date and valuation method in the purchase agreement."}, {"question":"Broker or sell myself?","answer":"Brokers (often ~8–12% on small deals) widen the buyer pool and guard confidentiality; FSBO works for known-buyer transfers with counsel."}, {"question":"How do earnouts affect value?","answer":"They bridge gaps when buyers doubt sustainability — part guaranteed, part contingent. Discount contingent dollars heavily in your head."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "How to Value a Small Business 2026: SDE, Comps & DCF | LoanPay Business", url: "https://business.loanpaylogic.com/how-to-value-small-business" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

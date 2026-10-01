@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "LLC vs. S Corp Taxes in 2026: Which Saves You More? | LoanPay Business",
@@ -27,6 +29,10 @@ export default function LlcVsScorpPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -60,6 +66,7 @@ export default function LlcVsScorpPage() {
             shows how the 15.3% applies dollar by dollar.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Side-by-side comparison</h2>
@@ -140,25 +147,27 @@ export default function LlcVsScorpPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I form an S corp or elect it?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I form an S corp or elect it?</summary>
               <p className="mt-1">You form an LLC or corporation under state law, then elect S tax treatment with Form 2553. There is no separate federal &quot;S corp&quot; to incorporate.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is a reasonable salary?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is a reasonable salary?</summary>
               <p className="mt-1">What comparable employers pay for similar work in your market — often 30–50% of profit for service firms. Document comps; the IRS enforces this.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I switch back if it does not pay?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I switch back if it does not pay?</summary>
               <p className="mt-1">Yes, you can revoke the election, but generally must wait several years before re-electing. Model carefully before filing.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does S status avoid income tax?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does S status avoid income tax?</summary>
               <p className="mt-1">No. It can reduce payroll/SE tax on distributions, but all profit still faces income tax on the owners&apos; returns.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -174,6 +183,22 @@ export default function LlcVsScorpPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "LLC vs. S Corp Taxes in 2026: Which Saves You More? | LoanPay Business", description: "LLC vs. S corp taxation in 2026: self-employment tax mechanics, reasonable salary, QBI interaction, Form 1120-S costs, and a $150K worked comparison.", url: "https://business.loanpaylogic.com/llc-vs-s-corp-taxes" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Do I form an S corp or elect it?","answer":"You form an LLC or corporation under state law, then elect S tax treatment with Form 2553. There is no separate federal \"S corp\" to incorporate."}, {"question":"What is a reasonable salary?","answer":"What comparable employers pay for similar work in your market — often 30–50% of profit for service firms. Document comps; the IRS enforces this."}, {"question":"Can I switch back if it does not pay?","answer":"Yes, you can revoke the election, but generally must wait several years before re-electing. Model carefully before filing."}, {"question":"Does S status avoid income tax?","answer":"No. It can reduce payroll/SE tax on distributions, but all profit still faces income tax on the owners’ returns."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "LLC vs. S Corp Taxes in 2026: Which Saves You More? | LoanPay Business", url: "https://business.loanpaylogic.com/llc-vs-s-corp-taxes" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

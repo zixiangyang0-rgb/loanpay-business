@@ -1,34 +1,147 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | LoanPay Business",
-  description: "Privacy policy for business.loanpaylogic.com: what we collect and why.",
+  description:
+    "Privacy policy for business.loanpaylogic.com: what we collect, cookies and AdSense, CCPA rights, opt-out choices, and contact.",
+  alternates: {
+    canonical: "https://business.loanpaylogic.com/privacy-policy",
+  },
 };
 
-export default function PrivacyPage() {
+export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <h1 className="text-3xl font-bold">Privacy Policy</h1>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
-        LoanPay Business publishes educational small-business guides. We do not require accounts,
-        and our pages do not ask for your Social Security number, bank credentials, or business
-        tax IDs.
-      </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
-        Like most websites, our hosting provider and analytics tools may log basic technical
-        information such as pages visited, browser type, and approximate location derived from
-        IP address. We use this only to keep the site working and to understand which guides
-        readers find useful.
-      </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
-        Third-party vendors, including Google AdSense, may use cookies to serve and measure ads.
-        You can control cookies in your browser settings and learn more at Google&apos;s Ads
-        Settings page. We never sell personal information.
-      </p>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">
-        If you email us, we keep your message only long enough to respond. Questions:
-        support@loanpaylogic.com.
-      </p>
+      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+          Privacy Policy
+        </p>
+        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+          Privacy Policy
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+          Plain-English summary of what LoanPay Business collects, how advertising
+          cookies work, and the choices you have. Updated October 2026.
+        </p>
+      </section>
+
+      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+        <section className="glass-card rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-white">What we collect</h2>
+          <p className="mt-3">
+            LoanPay Business does not require accounts and does not ask for your
+            name, Social Security number, bank credentials, or business tax IDs.
+            Guides on this site are free to read with no signup. Like most
+            websites, our hosting provider records standard log data (pages
+            viewed, device type, approximate location, referrer) to operate the
+            site and measure reliability.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Cookies &amp; AdSense</h2>
+          <p className="mt-3">
+            We use Google AdSense to keep the guides free. Google and its
+            partners may set cookies or use device identifiers to serve and
+            measure ads, including personalized advertising where you consent.
+            Google&apos;s use of advertising cookies enables it and its
+            partners to serve ads based on your visits to this and other
+            sites. A lightweight on-site consent banner stores your
+            Accept/Decline choice on-device (localStorage
+            &ldquo;consent-choice&rdquo;); declining serves non-personalized
+            ads. Site owners: personalized ads in the EU/UK additionally
+            require enabling Google FundingChoices under AdSense &gt; Privacy
+            &amp; messaging for TCF consent.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">
+            CCPA: Your Rights &amp; Do Not Sell
+          </h2>
+          <p className="mt-3">
+            Under the California Consumer Privacy Act (CCPA/CPRA), California
+            residents have the right to know what personal information is
+            collected, request deletion, correct inaccurate data, and opt out
+            of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of personal
+            information for cross-context behavioral advertising. We do not
+            sell personal information for money, but AdSense cookies may
+            constitute sharing under California law. To exercise your rights,
+            including Do Not Sell / Privacy Choices requests, email{" "}
+            <a
+              href="mailto:support@loanpaylogic.com"
+              className="text-amber-200 underline underline-offset-2"
+            >
+              support@loanpaylogic.com
+            </a>{" "}
+            or use the footer &ldquo;Do Not Sell / Privacy Choices&rdquo; link
+            (this page). We respond within 45 days and never discriminate for
+            exercising your rights.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Opt-out choices</h2>
+          <p className="mt-3">
+            You can control ad personalization at any time:
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              Google ad settings:{" "}
+              <a
+                href="https://adssettings.google.com"
+                className="text-amber-200 underline underline-offset-2"
+              >
+                https://adssettings.google.com
+              </a>{" "}
+              — turn off Ad Personalization.
+            </li>
+            <li>
+              Network Advertising Initiative opt-out:{" "}
+              <a
+                href="https://optout.networkadvertising.org"
+                className="text-amber-200 underline underline-offset-2"
+              >
+                optout.networkadvertising.org
+              </a>
+              .
+            </li>
+            <li>
+              Digital Advertising Alliance WebChoices:{" "}
+              <a
+                href="https://optout.aboutads.info"
+                className="text-amber-200 underline underline-offset-2"
+              >
+                optout.aboutads.info
+              </a>
+              .
+            </li>
+            <li>
+              Your browser settings — block or clear cookies; declining our
+              consent banner serves non-personalized ads.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">Contact</h2>
+          <p className="mt-3">
+            Questions about this policy or a privacy request: email{" "}
+            <a
+              href="mailto:support@loanpaylogic.com"
+              className="text-amber-200 underline underline-offset-2"
+            >
+              support@loanpaylogic.com
+            </a>
+            . See also our{" "}
+            <Link href="/disclaimer" className="text-amber-200 underline underline-offset-2">
+              disclaimer
+            </Link>
+            .
+          </p>
+        </section>
+      </article>
     </div>
   );
 }

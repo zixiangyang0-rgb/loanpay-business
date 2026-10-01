@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Payroll Taxes Employer Guide 2026: FICA, FUTA, SUTA & Withholding | LoanPay Business",
@@ -26,6 +28,10 @@ export default function PayrollTaxesPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -44,6 +50,7 @@ export default function PayrollTaxesPage() {
             experience-rated rates on state wage bases that range from $7,000 to over $50,000.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">2026 rates at a glance</h2>
@@ -129,25 +136,27 @@ export default function PayrollTaxesPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do owners pay payroll tax on draws?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do owners pay payroll tax on draws?</summary>
               <p className="mt-1">Sole-proprietor draws are not wages — profit faces SE tax instead. S-corp owners take W-2 salary with full payroll tax. See our S-corp guides.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">When does Social Security tax stop?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When does Social Security tax stop?</summary>
               <p className="mt-1">Per employee, once your wages to them pass $184,500 in 2026. Track year-to-date pay per worker; prior-employer wages don&apos;t count toward your cap.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is the nanny / household threshold?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is the nanny / household threshold?</summary>
               <p className="mt-1">For 2026, household employers generally owe FICA and a W-2 once cash wages pass about $3,000 to a domestic worker.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I just classify everyone as contractors?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I just classify everyone as contractors?</summary>
               <p className="mt-1">Only if the relationship genuinely qualifies — misclassification brings back taxes, penalties, and benefit liability. Read the classification guide first.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -162,6 +171,22 @@ export default function PayrollTaxesPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Payroll Taxes Employer Guide 2026: FICA, FUTA, SUTA & Withholding | LoanPay Business", description: "Employer payroll taxes in 2026: FICA 7.65% match, $184,500 Social Security base, FUTA/SUTA mechanics, withholding, deposits, and a $1,000 paycheck worked example.", url: "https://business.loanpaylogic.com/payroll-taxes-employer-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Do owners pay payroll tax on draws?","answer":"Sole-proprietor draws are not wages — profit faces SE tax instead. S-corp owners take W-2 salary with full payroll tax. See our S-corp guides."}, {"question":"When does Social Security tax stop?","answer":"Per employee, once your wages to them pass $184,500 in 2026. Track year-to-date pay per worker; prior-employer wages don’t count toward your cap."}, {"question":"What is the nanny / household threshold?","answer":"For 2026, household employers generally owe FICA and a W-2 once cash wages pass about $3,000 to a domestic worker."}, {"question":"Can I just classify everyone as contractors?","answer":"Only if the relationship genuinely qualifies — misclassification brings back taxes, penalties, and benefit liability. Read the classification guide first."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Payroll Taxes Employer Guide 2026: FICA, FUTA, SUTA & Withholding | LoanPay Business", url: "https://business.loanpaylogic.com/payroll-taxes-employer-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Meals & Travel Deduction Guide 2026 | LoanPay Business",
@@ -26,6 +28,10 @@ export default function MealsTravelPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -47,6 +53,7 @@ export default function MealsTravelPage() {
             clients present.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">What counts and at what rate</h2>
@@ -124,25 +131,27 @@ export default function MealsTravelPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Coffee with a prospect — deductible?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Coffee with a prospect — deductible?</summary>
               <p className="mt-1">Yes at 50% if genuine business is discussed and you document purpose and attendees. Purely social coffee is not.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I deduct commuting to a client?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I deduct commuting to a client?</summary>
               <p className="mt-1">Travel from home to a temporary work location can qualify, but regular commuting to a fixed office never does.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is an accountable plan?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is an accountable plan?</summary>
               <p className="mt-1">A written reimbursement policy requiring business connection, timely substantiation, and return of excess — it keeps reimbursements tax-free.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I need receipts under $75?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I need receipts under $75?</summary>
               <p className="mt-1">Lodging always needs receipts; other expenses under $75 still need the five log facts even where a paper receipt is excused.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -157,6 +166,22 @@ export default function MealsTravelPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Meals & Travel Deduction Guide 2026 | LoanPay Business", description: "Deduct business meals and travel in 2026: 50% meals rule, lodging, mileage vs. actual costs, accountable plans, and substantiation with a worked trip example.", url: "https://business.loanpaylogic.com/business-meals-travel-deduction-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Coffee with a prospect — deductible?","answer":"Yes at 50% if genuine business is discussed and you document purpose and attendees. Purely social coffee is not."}, {"question":"Can I deduct commuting to a client?","answer":"Travel from home to a temporary work location can qualify, but regular commuting to a fixed office never does."}, {"question":"What is an accountable plan?","answer":"A written reimbursement policy requiring business connection, timely substantiation, and return of excess — it keeps reimbursements tax-free."}, {"question":"Do I need receipts under $75?","answer":"Lodging always needs receipts; other expenses under $75 still need the five log facts even where a paper receipt is excused."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Meals & Travel Deduction Guide 2026 | LoanPay Business", url: "https://business.loanpaylogic.com/business-meals-travel-deduction-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

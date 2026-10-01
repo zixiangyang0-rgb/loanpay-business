@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Line of Credit Guide 2026: Draw, Repay, Repeat | LoanPay Business",
@@ -26,6 +28,10 @@ export default function LineOfCreditPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -45,6 +51,7 @@ export default function LineOfCreditPage() {
             ), with ceilings up to $5 million for qualified borrowers.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Line vs. loan vs. card vs. factoring</h2>
@@ -133,25 +140,27 @@ export default function LineOfCreditPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does an unused line cost anything?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does an unused line cost anything?</summary>
               <p className="mt-1">Sometimes — check for annual or unused-line fees (often ~0.25–0.5%). Interest itself applies only to drawn balances.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Secured or unsecured?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Secured or unsecured?</summary>
               <p className="mt-1">Secured lines offer bigger limits at lower rates but pledge assets. Start unsecured if limits suffice; secure when growth demands it.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can startups get lines?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can startups get lines?</summary>
               <p className="mt-1">Bank lines usually want history; newer firms often start with secured cards, microloans, or online lines at higher cost while building statements.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will draws hurt my credit score?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will draws hurt my credit score?</summary>
               <p className="mt-1">High utilization on the line can weigh on scores; repay promptly and keep draws well under the ceiling. See our credit score guide.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -166,6 +175,22 @@ export default function LineOfCreditPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Line of Credit Guide 2026: Draw, Repay, Repeat | LoanPay Business", description: "Business lines of credit in 2026: revolving vs. term loans, secured vs. unsecured, real cost math with examples, and when a line beats factoring or cards.", url: "https://business.loanpaylogic.com/business-line-of-credit-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Does an unused line cost anything?","answer":"Sometimes — check for annual or unused-line fees (often ~0.25–0.5%). Interest itself applies only to drawn balances."}, {"question":"Secured or unsecured?","answer":"Secured lines offer bigger limits at lower rates but pledge assets. Start unsecured if limits suffice; secure when growth demands it."}, {"question":"Can startups get lines?","answer":"Bank lines usually want history; newer firms often start with secured cards, microloans, or online lines at higher cost while building statements."}, {"question":"Will draws hurt my credit score?","answer":"High utilization on the line can weigh on scores; repay promptly and keep draws well under the ceiling. See our credit score guide."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Line of Credit Guide 2026: Draw, Repay, Repeat | LoanPay Business", url: "https://business.loanpaylogic.com/business-line-of-credit-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

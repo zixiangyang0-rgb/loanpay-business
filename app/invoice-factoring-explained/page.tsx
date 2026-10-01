@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Invoice Factoring Explained 2026: Costs, Types & Math | LoanPay Business",
@@ -26,6 +28,10 @@ export default function FactoringPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -42,6 +48,7 @@ export default function FactoringPage() {
             factor directly — consider how that reads to your best accounts.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">The true cost, annualized honestly</h2>
@@ -125,25 +132,27 @@ export default function FactoringPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Factoring vs. invoice financing?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Factoring vs. invoice financing?</summary>
               <p className="mt-1">Factoring sells the invoice (customer pays the factor); invoice financing borrows against it (you keep collecting). Financing is usually cheaper but harder to get.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will customers know?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will customers know?</summary>
               <p className="mt-1">Usually yes — they are directed to pay the factor. Some funders offer confidential facilities at higher cost.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if my customer never pays?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if my customer never pays?</summary>
               <p className="mt-1">Under recourse deals you repurchase the invoice; under non-recourse the factor absorbs covered credit losses only — read the exclusions.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can startups factor?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can startups factor?</summary>
               <p className="mt-1">Yes — factors underwrite your customers&apos; credit more than yours, which is why young B2B firms use them. Consumer receivables rarely qualify.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -158,6 +167,22 @@ export default function FactoringPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Invoice Factoring Explained 2026: Costs, Types & Math | LoanPay Business", description: "Invoice factoring in 2026: advances, discount fees, recourse vs. non-recourse, effective APR math, and when factoring beats a line of credit.", url: "https://business.loanpaylogic.com/invoice-factoring-explained" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Factoring vs. invoice financing?","answer":"Factoring sells the invoice (customer pays the factor); invoice financing borrows against it (you keep collecting). Financing is usually cheaper but harder to get."}, {"question":"Will customers know?","answer":"Usually yes — they are directed to pay the factor. Some funders offer confidential facilities at higher cost."}, {"question":"What if my customer never pays?","answer":"Under recourse deals you repurchase the invoice; under non-recourse the factor absorbs covered credit losses only — read the exclusions."}, {"question":"Can startups factor?","answer":"Yes — factors underwrite your customers’ credit more than yours, which is why young B2B firms use them. Consumer receivables rarely qualify."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Invoice Factoring Explained 2026: Costs, Types & Math | LoanPay Business", url: "https://business.loanpaylogic.com/invoice-factoring-explained" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

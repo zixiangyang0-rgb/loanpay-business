@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Small Business Tax Calendar 2026: Every Deadline | LoanPay Business",
@@ -26,6 +28,10 @@ export default function TaxCalendarPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -53,6 +59,7 @@ export default function TaxCalendarPage() {
             show the underlying math.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">2026 deadline table</h2>
@@ -150,25 +157,27 @@ export default function TaxCalendarPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if a deadline falls on a weekend?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if a deadline falls on a weekend?</summary>
               <p className="mt-1">It shifts to the next business day. The March 15 S-corp deadline, for example, moves when the 15th is a Sunday.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does an extension delay payment?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does an extension delay payment?</summary>
               <p className="mt-1">No. Extensions delay paperwork, not payment — pay the estimate of what you owe by the original date to stop interest.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">First year with no prior return — what safe harbor?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">First year with no prior return — what safe harbor?</summary>
               <p className="mt-1">Use 90% of the current year&apos;s projected bill and true up quarterly as actuals arrive.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are state estimates separate?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are state estimates separate?</summary>
               <p className="mt-1">Yes. Most income-tax states run parallel quarterly estimates with their own vouchers — calendar both systems.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -183,6 +192,22 @@ export default function TaxCalendarPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Small Business Tax Calendar 2026: Every Deadline | LoanPay Business", description: "2026 small-business tax calendar: quarterly estimates, payroll deposits, 1099/W-2 dates, S-corp, partnership, and C-corp returns, plus penalty-safe-harbor basics.", url: "https://business.loanpaylogic.com/small-business-tax-calendar-2026" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"What if a deadline falls on a weekend?","answer":"It shifts to the next business day. The March 15 S-corp deadline, for example, moves when the 15th is a Sunday."}, {"question":"Does an extension delay payment?","answer":"No. Extensions delay paperwork, not payment — pay the estimate of what you owe by the original date to stop interest."}, {"question":"First year with no prior return — what safe harbor?","answer":"Use 90% of the current year’s projected bill and true up quarterly as actuals arrive."}, {"question":"Are state estimates separate?","answer":"Yes. Most income-tax states run parallel quarterly estimates with their own vouchers — calendar both systems."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Small Business Tax Calendar 2026: Every Deadline | LoanPay Business", url: "https://business.loanpaylogic.com/small-business-tax-calendar-2026" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

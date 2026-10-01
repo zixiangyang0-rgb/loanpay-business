@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Startup Costs Checklist 2026: Budget Before You Launch | LoanPay Business",
@@ -44,6 +46,10 @@ export default function StartupCostsPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -54,6 +60,7 @@ export default function StartupCostsPage() {
             ))}
           </ul>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section className="glass-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Monthly costs</h2>
@@ -137,25 +144,27 @@ export default function StartupCostsPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How much runway do I need?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How much runway do I need?</summary>
               <p className="mt-1">Target at least 6 months of core expenses in reachable cash before signing fixed commitments like leases or hires.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I borrow the full budget upfront?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I borrow the full budget upfront?</summary>
               <p className="mt-1">No. Secure access (a line or approval), then draw in stages as milestones — revenue, hires, inventory turns — actually arrive.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What can I deduct in year one?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What can I deduct in year one?</summary>
               <p className="mt-1">Up to $5,000 of startup costs is often deductible with the rest amortized, within limits — confirm current rules with your accountant.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Lease or home office first?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Lease or home office first?</summary>
               <p className="mt-1">Stay lean until revenue covers the space twice over. For home-office math, see the tax site&apos;s home-office deduction guide.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -170,6 +179,22 @@ export default function StartupCostsPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Startup Costs Checklist 2026: Budget Before You Launch | LoanPay Business", description: "Budget your 2026 launch: one-time vs. monthly startup costs, hidden fees founders miss, a $25K worked budget, and the 6-month runway rule.", url: "https://business.loanpaylogic.com/startup-costs-checklist" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"How much runway do I need?","answer":"Target at least 6 months of core expenses in reachable cash before signing fixed commitments like leases or hires."}, {"question":"Should I borrow the full budget upfront?","answer":"No. Secure access (a line or approval), then draw in stages as milestones — revenue, hires, inventory turns — actually arrive."}, {"question":"What can I deduct in year one?","answer":"Up to $5,000 of startup costs is often deductible with the rest amortized, within limits — confirm current rules with your accountant."}, {"question":"Lease or home office first?","answer":"Stay lean until revenue covers the space twice over. For home-office math, see the tax site’s home-office deduction guide."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Startup Costs Checklist 2026: Budget Before You Launch | LoanPay Business", url: "https://business.loanpaylogic.com/startup-costs-checklist" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

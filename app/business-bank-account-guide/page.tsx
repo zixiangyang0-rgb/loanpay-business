@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Bank Account Guide 2026: Separate & Save | LoanPay Business",
@@ -27,6 +29,10 @@ export default function BankAccountPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -44,6 +50,7 @@ export default function BankAccountPage() {
             receiving your EIN letter; every week of commingled activity is a week of cleanup later.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Documents and account types</h2>
@@ -131,25 +138,27 @@ export default function BankAccountPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I use my personal account at first?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I use my personal account at first?</summary>
               <p className="mt-1">Temporarily, but it weakens liability protection and complicates taxes. Open the business account as soon as the EIN arrives.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How many accounts do I need?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How many accounts do I need?</summary>
               <p className="mt-1">Start with checking plus a tax-reserve savings account. Add payroll and merchant pieces only when volume justifies them.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Online bank or local branch?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Online bank or local branch?</summary>
               <p className="mt-1">Cash-heavy businesses usually need a branch for deposits; digital businesses can prioritize low fees and integrations.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will the bank pull my personal credit?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will the bank pull my personal credit?</summary>
               <p className="mt-1">Often yes for new businesses with no history. A business account itself builds the statements lenders later review.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -164,6 +173,22 @@ export default function BankAccountPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Bank Account Guide 2026: Separate & Save | LoanPay Business", description: "Open the right business bank account in 2026: documents checklist, checking vs. savings vs. merchant accounts, fee traps, and a clean money routine.", url: "https://business.loanpaylogic.com/business-bank-account-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Can I use my personal account at first?","answer":"Temporarily, but it weakens liability protection and complicates taxes. Open the business account as soon as the EIN arrives."}, {"question":"How many accounts do I need?","answer":"Start with checking plus a tax-reserve savings account. Add payroll and merchant pieces only when volume justifies them."}, {"question":"Online bank or local branch?","answer":"Cash-heavy businesses usually need a branch for deposits; digital businesses can prioritize low fees and integrations."}, {"question":"Will the bank pull my personal credit?","answer":"Often yes for new businesses with no history. A business account itself builds the statements lenders later review."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Bank Account Guide 2026: Separate & Save | LoanPay Business", url: "https://business.loanpaylogic.com/business-bank-account-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

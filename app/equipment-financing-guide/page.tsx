@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Equipment Financing Guide 2026: Loans vs. Leases | LoanPay Business",
@@ -26,6 +28,10 @@ export default function EquipmentPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -42,6 +48,7 @@ export default function EquipmentPage() {
             flagship model.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Loan vs. lease vs. SBA path</h2>
@@ -138,25 +145,27 @@ export default function EquipmentPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">New or used equipment?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">New or used equipment?</summary>
               <p className="mt-1">Used often wins on value if inspected and warrantied; new wins on reliability, warranty, and sometimes manufacturer-subsidized rates.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I deduct the full cost in year one?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I deduct the full cost in year one?</summary>
               <p className="mt-1">Possibly via Section 179 or bonus depreciation for qualifying assets — but limits, profit, and state conformity vary. Ask your accountant.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What down payment is typical?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What down payment is typical?</summary>
               <p className="mt-1">Often 0–20% for bank equipment loans; stronger collateral and cash flow push it toward zero.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Lease or buy for vehicles?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Lease or buy for vehicles?</summary>
               <p className="mt-1">High-mileage work vehicles usually favor buying; image-sensitive low-mileage fleets sometimes lease well. Run both totals.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -171,6 +180,22 @@ export default function EquipmentPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Equipment Financing Guide 2026: Loans vs. Leases | LoanPay Business", description: "Finance business equipment in 2026: term loans vs. leases vs. SBA options, Section 179 and bonus depreciation basics, and payment math with examples.", url: "https://business.loanpaylogic.com/equipment-financing-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"New or used equipment?","answer":"Used often wins on value if inspected and warrantied; new wins on reliability, warranty, and sometimes manufacturer-subsidized rates."}, {"question":"Can I deduct the full cost in year one?","answer":"Possibly via Section 179 or bonus depreciation for qualifying assets — but limits, profit, and state conformity vary. Ask your accountant."}, {"question":"What down payment is typical?","answer":"Often 0–20% for bank equipment loans; stronger collateral and cash flow push it toward zero."}, {"question":"Lease or buy for vehicles?","answer":"High-mileage work vehicles usually favor buying; image-sensitive low-mileage fleets sometimes lease well. Run both totals."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Equipment Financing Guide 2026: Loans vs. Leases | LoanPay Business", url: "https://business.loanpaylogic.com/equipment-financing-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

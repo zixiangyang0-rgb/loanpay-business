@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Credit Score Guide 2026: Build It From Zero | LoanPay Business",
@@ -26,6 +28,10 @@ export default function BizCreditScorePage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -45,6 +51,7 @@ export default function BizCreditScorePage() {
             ), D-U-N-S number, and consistent legal name and address everywhere.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">What moves each score</h2>
@@ -140,25 +147,27 @@ export default function BizCreditScorePage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does business credit affect my personal score?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does business credit affect my personal score?</summary>
               <p className="mt-1">Indirectly but really — guarantees and SBSS blending mean personal delinquencies can sink business approvals and vice versa.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which vendors report payments?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which vendors report payments?</summary>
               <p className="mt-1">Ask before opening accounts. Office suppliers, fuel cards, and many wholesalers report; landlords and small vendors often don&apos;t.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast can I build a file?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast can I build a file?</summary>
               <p className="mt-1">Meaningful files typically take 6–12 months of reported early payments across 3–5 tradelines. There are no legitimate overnight fixes.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I close old tradelines?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I close old tradelines?</summary>
               <p className="mt-1">No — aged, clean tradelines help depth. Keep them active with small recurring orders paid early.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -173,6 +182,22 @@ export default function BizCreditScorePage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Credit Score Guide 2026: Build It From Zero | LoanPay Business", description: "Business credit scores in 2026: D&B PAYDEX, Experian, Equifax, FICO SBSS, what moves them, and a 12-month plan from no file to fundable.", url: "https://business.loanpaylogic.com/business-credit-score-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Does business credit affect my personal score?","answer":"Indirectly but really — guarantees and SBSS blending mean personal delinquencies can sink business approvals and vice versa."}, {"question":"Which vendors report payments?","answer":"Ask before opening accounts. Office suppliers, fuel cards, and many wholesalers report; landlords and small vendors often don’t."}, {"question":"How fast can I build a file?","answer":"Meaningful files typically take 6–12 months of reported early payments across 3–5 tradelines. There are no legitimate overnight fixes."}, {"question":"Should I close old tradelines?","answer":"No — aged, clean tradelines help depth. Keep them active with small recurring orders paid early."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Credit Score Guide 2026: Build It From Zero | LoanPay Business", url: "https://business.loanpaylogic.com/business-credit-score-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

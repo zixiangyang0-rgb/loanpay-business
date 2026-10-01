@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business",
@@ -37,6 +39,10 @@ export default function StartLlcPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -47,6 +53,7 @@ export default function StartLlcPage() {
             ))}
           </ol>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Why founders pick the LLC</h2>
@@ -169,25 +176,27 @@ export default function StartLlcPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I form in Delaware or Nevada instead of my home state?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I form in Delaware or Nevada instead of my home state?</summary>
               <p className="mt-1">Usually no. A foreign LLC must still register where you operate, so you pay two states. Out-of-state formation helps only in narrow cases — ask an attorney.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long does formation take?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long does formation take?</summary>
               <p className="mt-1">Online filings often confirm within days; mailed filings can take several weeks. Check your secretary of state for current processing times.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I need a lawyer to form an LLC?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I need a lawyer to form an LLC?</summary>
               <p className="mt-1">Most single-member LLCs file fine without one, but multi-member LLCs benefit from attorney review of the operating agreement.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does an LLC save taxes by itself?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does an LLC save taxes by itself?</summary>
               <p className="mt-1">No. Tax treatment follows elections, not the LLC label. Savings come from S-corp elections or deductions, not formation alone.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -202,6 +211,22 @@ export default function StartLlcPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business", description: "Start an LLC in 2026 the right way: name search, articles, registered agent, EIN, operating agreement, bank account, and licenses — with costs and timelines.", url: "https://business.loanpaylogic.com/how-to-start-llc-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Should I form in Delaware or Nevada instead of my home state?","answer":"Usually no. A foreign LLC must still register where you operate, so you pay two states. Out-of-state formation helps only in narrow cases — ask an attorney."}, {"question":"How long does formation take?","answer":"Online filings often confirm within days; mailed filings can take several weeks. Check your secretary of state for current processing times."}, {"question":"Do I need a lawyer to form an LLC?","answer":"Most single-member LLCs file fine without one, but multi-member LLCs benefit from attorney review of the operating agreement."}, {"question":"Does an LLC save taxes by itself?","answer":"No. Tax treatment follows elections, not the LLC label. Savings come from S-corp elections or deductions, not formation alone."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business", url: "https://business.loanpaylogic.com/how-to-start-llc-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

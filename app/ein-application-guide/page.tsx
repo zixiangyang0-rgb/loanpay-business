@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "EIN Application Guide 2026: Free IRS Filing & Scam Warnings | LoanPay Business",
@@ -26,6 +28,10 @@ export default function EinGuidePage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -41,6 +47,7 @@ export default function EinGuidePage() {
             its own number — a sole proprietorship and its later LLC do not share.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">How to apply: online, fax, mail, phone</h2>
@@ -133,25 +140,27 @@ export default function EinGuidePage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is the EIN really free?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is the EIN really free?</summary>
               <p className="mt-1">Yes — every IRS method (online, fax, mail, phone) is free. Anyone charging a fee is a third-party filer, not the IRS.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Form first or EIN first?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Form first or EIN first?</summary>
               <p className="mt-1">Form the LLC first, then apply — the online assistant asks for your legal entity details and formation state.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I get two EINs for one business?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I get two EINs for one business?</summary>
               <p className="mt-1">No. One entity, one EIN. If you received duplicates by mistake, call the IRS rather than using both.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does an EIN change my taxes?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does an EIN change my taxes?</summary>
               <p className="mt-1">No. It identifies the business; your tax treatment follows your entity type and elections. See our LLC vs. S corp guide.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -166,6 +175,22 @@ export default function EinGuidePage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "EIN Application Guide 2026: Free IRS Filing & Scam Warnings | LoanPay Business", description: "Get your Employer Identification Number free from the IRS in 2026: online instant approval, fax and mail options, Form SS-4 tips, and how to avoid $50–$300 EIN scams.", url: "https://business.loanpaylogic.com/ein-application-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Is the EIN really free?","answer":"Yes — every IRS method (online, fax, mail, phone) is free. Anyone charging a fee is a third-party filer, not the IRS."}, {"question":"Form first or EIN first?","answer":"Form the LLC first, then apply — the online assistant asks for your legal entity details and formation state."}, {"question":"Can I get two EINs for one business?","answer":"No. One entity, one EIN. If you received duplicates by mistake, call the IRS rather than using both."}, {"question":"Does an EIN change my taxes?","answer":"No. It identifies the business; your tax treatment follows your entity type and elections. See our LLC vs. S corp guide."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "EIN Application Guide 2026: Free IRS Filing & Scam Warnings | LoanPay Business", url: "https://business.loanpaylogic.com/ein-application-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Contractors vs. Employees 2026: 1099 Rules & Penalties | LoanPay Business",
@@ -26,6 +28,10 @@ export default function ContractorsPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -43,6 +49,7 @@ export default function ContractorsPage() {
             tests — satisfy the toughest rule that applies to you, not the friendliest.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">1099-NEC mechanics for contractors</h2>
@@ -139,25 +146,27 @@ export default function ContractorsPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can a contractor work full-time for me?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can a contractor work full-time for me?</summary>
               <p className="mt-1">Duration alone doesn&apos;t decide, but full-time, exclusive, supervised work strongly suggests employment. Structure and document independence carefully.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I issue 1099s to LLCs?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I issue 1099s to LLCs?</summary>
               <p className="mt-1">Single-member LLCs paid $600+ generally still get 1099-NEC; most incorporated entities don&apos;t. Go by the W-9 entity box, not the name.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What triggers audits?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What triggers audits?</summary>
               <p className="mt-1">Contractor 1099s for steady weekly amounts, workers&apos; comp exemptions paired with large contractor spend, and ex-worker unemployment claims.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I convert contractors to employees?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I convert contractors to employees?</summary>
               <p className="mt-1">Yes — and voluntary correction programs may reduce penalties versus getting caught. Fix it before an agency notice arrives.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -172,6 +181,22 @@ export default function ContractorsPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Contractors vs. Employees 2026: 1099 Rules & Penalties | LoanPay Business", description: "Classify workers correctly in 2026: behavioral, financial, and relationship tests, Form 1099-NEC rules, DOL and IRS enforcement, and misclassification costs with examples.", url: "https://business.loanpaylogic.com/contractors-vs-employees-1099-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Can a contractor work full-time for me?","answer":"Duration alone doesn’t decide, but full-time, exclusive, supervised work strongly suggests employment. Structure and document independence carefully."}, {"question":"Do I issue 1099s to LLCs?","answer":"Single-member LLCs paid $600+ generally still get 1099-NEC; most incorporated entities don’t. Go by the W-9 entity box, not the name."}, {"question":"What triggers audits?","answer":"Contractor 1099s for steady weekly amounts, workers’ comp exemptions paired with large contractor spend, and ex-worker unemployment claims."}, {"question":"Can I convert contractors to employees?","answer":"Yes — and voluntary correction programs may reduce penalties versus getting caught. Fix it before an agency notice arrives."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Contractors vs. Employees 2026: 1099 Rules & Penalties | LoanPay Business", url: "https://business.loanpaylogic.com/contractors-vs-employees-1099-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

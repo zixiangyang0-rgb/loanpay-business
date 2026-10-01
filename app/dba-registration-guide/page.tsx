@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "DBA Registration Guide 2026: Trade Names Done Right | LoanPay Business",
@@ -26,6 +28,10 @@ export default function DbaPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -45,6 +51,7 @@ export default function DbaPage() {
             name, and many landlords and marketplaces ask for it too.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">When a DBA earns its fee</h2>
@@ -128,25 +135,27 @@ export default function DbaPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can two businesses share one DBA?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can two businesses share one DBA?</summary>
               <p className="mt-1">Sometimes the same name is available in different counties, but identical names in one registry are usually rejected. Search first.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does a DBA need its own EIN?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does a DBA need its own EIN?</summary>
               <p className="mt-1">No. The DBA uses the underlying entity&apos;s EIN and tax accounts — it is a name, not a taxpayer.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">DBA or trademark?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">DBA or trademark?</summary>
               <p className="mt-1">File the DBA for permission to operate under the name; register a trademark for exclusive brand rights. Many businesses do both.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can a sole proprietor get a business account with a DBA?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can a sole proprietor get a business account with a DBA?</summary>
               <p className="mt-1">Yes — banks generally accept the filed DBA certificate plus your ID to title an account in the trade name.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -161,6 +170,22 @@ export default function DbaPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "DBA Registration Guide 2026: Trade Names Done Right | LoanPay Business", description: "Register a DBA in 2026: when a trade name helps, name search, county vs. state filing, publication rules, bank use, renewals, and trademark limits.", url: "https://business.loanpaylogic.com/dba-registration-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Can two businesses share one DBA?","answer":"Sometimes the same name is available in different counties, but identical names in one registry are usually rejected. Search first."}, {"question":"Does a DBA need its own EIN?","answer":"No. The DBA uses the underlying entity’s EIN and tax accounts — it is a name, not a taxpayer."}, {"question":"DBA or trademark?","answer":"File the DBA for permission to operate under the name; register a trademark for exclusive brand rights. Many businesses do both."}, {"question":"Can a sole proprietor get a business account with a DBA?","answer":"Yes — banks generally accept the filed DBA certificate plus your ID to title an account in the trade name."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "DBA Registration Guide 2026: Trade Names Done Right | LoanPay Business", url: "https://business.loanpaylogic.com/dba-registration-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

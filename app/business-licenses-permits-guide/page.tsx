@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Licenses & Permits Guide 2026 | LoanPay Business",
@@ -26,6 +28,10 @@ export default function LicensesPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -47,6 +53,7 @@ export default function LicensesPage() {
             , then verify each layer with the issuing agency, not a blog list.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Finding your exact list</h2>
@@ -136,25 +143,27 @@ export default function LicensesPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">LLC filed — am I licensed?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">LLC filed — am I licensed?</summary>
               <p className="mt-1">No. Formation creates the entity; licenses grant permission to do specific work. You almost always need both.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do online businesses need local licenses?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do online businesses need local licenses?</summary>
               <p className="mt-1">Often yes — your home city usually requires registration where work is performed, plus seller&apos;s permits where you have nexus.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is a seller&apos;s permit?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is a seller&apos;s permit?</summary>
               <p className="mt-1">State authorization to collect sales tax on taxable goods (and some services). Selling without one where required brings back taxes plus penalties.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How do I track renewals?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do I track renewals?</summary>
               <p className="mt-1">One spreadsheet: license, agency, renewal date, fee, and confirmation number — reviewed monthly with your bookkeeping.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -169,6 +178,22 @@ export default function LicensesPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Licenses & Permits Guide 2026 | LoanPay Business", description: "Business licenses and permits in 2026: federal, state, and local layers, seller's permits, professional licenses, home-business rules, and renewal tracking.", url: "https://business.loanpaylogic.com/business-licenses-permits-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"LLC filed — am I licensed?","answer":"No. Formation creates the entity; licenses grant permission to do specific work. You almost always need both."}, {"question":"Do online businesses need local licenses?","answer":"Often yes — your home city usually requires registration where work is performed, plus seller’s permits where you have nexus."}, {"question":"What is a seller’s permit?","answer":"State authorization to collect sales tax on taxable goods (and some services). Selling without one where required brings back taxes plus penalties."}, {"question":"How do I track renewals?","answer":"One spreadsheet: license, agency, renewal date, fee, and confirmation number — reviewed monthly with your bookkeeping."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Licenses & Permits Guide 2026 | LoanPay Business", url: "https://business.loanpaylogic.com/business-licenses-permits-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

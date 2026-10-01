@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "SBA Microloans Guide 2026: Up to $50,000 for Tiny Firms | LoanPay Business",
@@ -26,6 +28,10 @@ export default function SbaMicroPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -46,6 +52,7 @@ export default function SbaMicroPage() {
             describes.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Who they fit — and who should look elsewhere</h2>
@@ -136,25 +143,27 @@ export default function SbaMicroPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast can I get the money?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast can I get the money?</summary>
               <p className="mt-1">Often a few weeks from complete application to funding — faster than 7(a), slower than a card or merchant advance.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I get more than $50,000?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I get more than $50,000?</summary>
               <p className="mt-1">Not from this program — $50,000 is the hard cap. Larger needs belong in 7(a) or 504 territory.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I need perfect credit?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I need perfect credit?</summary>
               <p className="mt-1">No. Intermediaries weigh character, cash flow, and coaching participation alongside credit — that is the program&apos;s point.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can microloans refinance debt?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can microloans refinance debt?</summary>
               <p className="mt-1">Generally no. They fund new working capital and assets; refinancing belongs in 7(a) or conventional workouts.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -169,6 +178,22 @@ export default function SbaMicroPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "SBA Microloans Guide 2026: Up to $50,000 for Tiny Firms | LoanPay Business", description: "SBA microloans in 2026: up to $50,000 through nonprofit intermediaries, 8–13% rates, who qualifies, what they fund, and how to apply step by step.", url: "https://business.loanpaylogic.com/sba-microloans-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"How fast can I get the money?","answer":"Often a few weeks from complete application to funding — faster than 7(a), slower than a card or merchant advance."}, {"question":"Can I get more than $50,000?","answer":"Not from this program — $50,000 is the hard cap. Larger needs belong in 7(a) or 504 territory."}, {"question":"Do I need perfect credit?","answer":"No. Intermediaries weigh character, cash flow, and coaching participation alongside credit — that is the program’s point."}, {"question":"Can microloans refinance debt?","answer":"Generally no. They fund new working capital and assets; refinancing belongs in 7(a) or conventional workouts."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "SBA Microloans Guide 2026: Up to $50,000 for Tiny Firms | LoanPay Business", url: "https://business.loanpaylogic.com/sba-microloans-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

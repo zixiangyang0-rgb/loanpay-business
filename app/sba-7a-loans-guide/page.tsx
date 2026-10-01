@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "SBA 7(a) Loans Guide 2026: Rates, Limits & How to Apply | LoanPay Business",
@@ -27,6 +29,10 @@ export default function Sba7aPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -45,6 +51,7 @@ export default function Sba7aPage() {
             years for real estate.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">2026 rates, fees, and structure</h2>
@@ -146,25 +153,27 @@ export default function Sba7aPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What credit score do I need?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What credit score do I need?</summary>
               <p className="mt-1">The SBA sets no minimum, but most lenders look for roughly 650+ personally, with stronger cash flow offsetting thinner scores.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can startups get 7(a) loans?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can startups get 7(a) loans?</summary>
               <p className="mt-1">Yes, with a strong plan, equity injection (often ~10%), experience, and projections — though microloans may fit earlier stages.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I prepay without penalty?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I prepay without penalty?</summary>
               <p className="mt-1">Loans under 15 years generally have none; longer-maturity loans may carry a declining prepayment fee in early years.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does the SBA take ownership?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does the SBA take ownership?</summary>
               <p className="mt-1">No. The guarantee backs the lender; you keep full ownership and repay the bank, not the government.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -179,6 +188,22 @@ export default function Sba7aPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "SBA 7(a) Loans Guide 2026: Rates, Limits & How to Apply | LoanPay Business", description: "SBA 7(a) loans in 2026: up to $5M, 75–85% guarantees, prime-linked rate caps, fees, eligibility, documents, and the application timeline step by step.", url: "https://business.loanpaylogic.com/sba-7a-loans-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"What credit score do I need?","answer":"The SBA sets no minimum, but most lenders look for roughly 650+ personally, with stronger cash flow offsetting thinner scores."}, {"question":"Can startups get 7(a) loans?","answer":"Yes, with a strong plan, equity injection (often ~10%), experience, and projections — though microloans may fit earlier stages."}, {"question":"Can I prepay without penalty?","answer":"Loans under 15 years generally have none; longer-maturity loans may carry a declining prepayment fee in early years."}, {"question":"Does the SBA take ownership?","answer":"No. The guarantee backs the lender; you keep full ownership and repay the bank, not the government."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "SBA 7(a) Loans Guide 2026: Rates, Limits & How to Apply | LoanPay Business", url: "https://business.loanpaylogic.com/sba-7a-loans-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Business Credit Cards Basics 2026: Rewards Without Debt | LoanPay Business",
@@ -26,6 +28,10 @@ export default function BizCardsPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -44,6 +50,7 @@ export default function BizCardsPage() {
             or term loan usually costs less than revolving a card balance.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Picking: rewards vs. 0% intro vs. low fee</h2>
@@ -130,25 +137,27 @@ export default function BizCardsPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I get a business card as a sole proprietor?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I get a business card as a sole proprietor?</summary>
               <p className="mt-1">Yes. Apply with your SSN and business revenue; an EIN helps but is not always required.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will applying hurt my credit?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will applying hurt my credit?</summary>
               <p className="mt-1">Expect a hard inquiry on your personal report because of the personal guarantee. Batch applications, don&apos;t spray them.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I carry a balance to build credit?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I carry a balance to build credit?</summary>
               <p className="mt-1">No. On-time payment history builds credit; carried balances only add interest. Pay in full.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are rewards taxable?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are rewards taxable?</summary>
               <p className="mt-1">Cash-back rebates on spending are generally treated as discounts, not income, but large sign-up structures vary — confirm with your accountant.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -163,6 +172,22 @@ export default function BizCardsPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Business Credit Cards Basics 2026: Rewards Without Debt | LoanPay Business", description: "Business credit cards in 2026: how issuer rules differ from personal cards, picking rewards vs. 0% APR, utilization habits, and building business credit safely.", url: "https://business.loanpaylogic.com/business-credit-cards-basics" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Can I get a business card as a sole proprietor?","answer":"Yes. Apply with your SSN and business revenue; an EIN helps but is not always required."}, {"question":"Will applying hurt my credit?","answer":"Expect a hard inquiry on your personal report because of the personal guarantee. Batch applications, don’t spray them."}, {"question":"Should I carry a balance to build credit?","answer":"No. On-time payment history builds credit; carried balances only add interest. Pay in full."}, {"question":"Are rewards taxable?","answer":"Cash-back rebates on spending are generally treated as discounts, not income, but large sign-up structures vary — confirm with your accountant."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Business Credit Cards Basics 2026: Rewards Without Debt | LoanPay Business", url: "https://business.loanpaylogic.com/business-credit-cards-basics" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

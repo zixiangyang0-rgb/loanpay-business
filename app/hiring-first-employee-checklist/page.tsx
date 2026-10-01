@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Hiring Your First Employee Checklist 2026 | LoanPay Business",
@@ -37,6 +39,10 @@ export default function HiringPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -47,6 +53,7 @@ export default function HiringPage() {
             ))}
           </ol>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Before the offer: accounts and insurance</h2>
@@ -158,25 +165,27 @@ export default function HiringPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Employee or contractor for the first role?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Employee or contractor for the first role?</summary>
               <p className="mt-1">Scheduled, supervised, core-work roles are usually employees. Project-based specialists with their own clients are often contractors — but test the facts.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast must I file the I-9?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast must I file the I-9?</summary>
               <p className="mt-1">Section 1 by day one, Section 2 verification within 3 business days of the start date. Keep I-9s separate from personnel files.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I need workers&apos; comp for one part-timer?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I need workers&apos; comp for one part-timer?</summary>
               <p className="mt-1">In most states, yes from the first employee-hour, with narrow exemptions. Confirm with your state workers&apos; comp board before day one.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Payroll provider or DIY?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Payroll provider or DIY?</summary>
               <p className="mt-1">A provider ($40–$150/month) is usually worth it from hire one — filings, deposits, and W-2s handled beats learning penalties firsthand.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -191,6 +200,22 @@ export default function HiringPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Hiring Your First Employee Checklist 2026 | LoanPay Business", description: "Hire your first employee in 2026: EIN, state payroll accounts, I-9, W-4, workers' comp, posters, payroll setup, and the true loaded cost of a $50K hire.", url: "https://business.loanpaylogic.com/hiring-first-employee-checklist" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Employee or contractor for the first role?","answer":"Scheduled, supervised, core-work roles are usually employees. Project-based specialists with their own clients are often contractors — but test the facts."}, {"question":"How fast must I file the I-9?","answer":"Section 1 by day one, Section 2 verification within 3 business days of the start date. Keep I-9s separate from personnel files."}, {"question":"Do I need workers’ comp for one part-timer?","answer":"In most states, yes from the first employee-hour, with narrow exemptions. Confirm with your state workers’ comp board before day one."}, {"question":"Payroll provider or DIY?","answer":"A provider ($40–$150/month) is usually worth it from hire one — filings, deposits, and W-2s handled beats learning penalties firsthand."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Hiring Your First Employee Checklist 2026 | LoanPay Business", url: "https://business.loanpaylogic.com/hiring-first-employee-checklist" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }

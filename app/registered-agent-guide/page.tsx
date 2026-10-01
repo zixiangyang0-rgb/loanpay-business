@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../../components/AdSlot";
+import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
   title: "Registered Agent Guide 2026: Duties, Rules & Services | LoanPay Business",
@@ -26,6 +28,10 @@ export default function AgentPage() {
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
       </section>
+      <p className="mt-4 text-center text-xs text-slate-400">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
+      </p>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section>
@@ -45,6 +51,7 @@ export default function AgentPage() {
             builds. Treat the designation as infrastructure, not paperwork.
           </p>
         </section>
+        <AdSlot format="in-article" slot="TODO-business-inarticle-1" />
 
         <section>
           <h2 className="text-xl font-bold text-white">Who qualifies — and who should not</h2>
@@ -129,25 +136,27 @@ export default function AgentPage() {
           </p>
         </section>
 
+        <AdSlot format="display" slot="TODO-business-display-1" />
+        <AdSlot format="multiplex" slot="TODO-business-multiplex-1" />
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can my registered agent be in another state?</h3>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can my registered agent be in another state?</summary>
               <p className="mt-1">No. You need a qualified agent with a physical address in each state where the company is registered.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I use a P.O. box?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I use a P.O. box?</summary>
               <p className="mt-1">Generally no — statutes require a physical street address where process can be served in person.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if my agent resigns?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if my agent resigns?</summary>
               <p className="mt-1">Appoint a successor immediately via the state change filing. Operating without an agent risks loss of good standing.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does the agent handle my taxes?</h3>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does the agent handle my taxes?</summary>
               <p className="mt-1">No. They forward notices; preparing returns, payroll, and estimates stays with you and your accountant.</p>
-            </div>
+            </details>
           </div>
         </section>
 
@@ -162,6 +171,22 @@ export default function AgentPage() {
           </p>
         </section>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "Registered Agent Guide 2026: Duties, Rules & Services | LoanPay Business", description: "Registered agents in 2026: legal duties, who can serve, physical-address rules, multi-state needs, commercial service costs, and what happens if you skip one.", url: "https://business.loanpaylogic.com/registered-agent-guide" })) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Can my registered agent be in another state?","answer":"No. You need a qualified agent with a physical address in each state where the company is registered."}, {"question":"Can I use a P.O. box?","answer":"Generally no — statutes require a physical street address where process can be served in person."}, {"question":"What if my agent resigns?","answer":"Appoint a successor immediately via the state change filing. Operating without an agent risks loss of good standing."}, {"question":"Does the agent handle my taxes?","answer":"No. They forward notices; preparing returns, payroll, and estimates stays with you and your accountant."}])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "Registered Agent Guide 2026: Duties, Rules & Services | LoanPay Business", url: "https://business.loanpaylogic.com/registered-agent-guide" }])) }}
+      />
+      <p className="mt-6 text-center text-xs text-slate-500">
+        By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
+        <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
+      </p>
     </div>
   );
 }
