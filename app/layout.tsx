@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     description:
       "Formation, funding, taxes, payroll, and operations guides for US small businesses — free educational content.",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4906207495792820",
+  },
 };
 
 const navLinks = [
@@ -74,6 +77,13 @@ function Footer() {
       <p className="mt-4">
         &copy; {new Date().getFullYear()} business.loanpaylogic.com. General education only, not
         legal or tax advice.
+      </p>
+      <p className="mt-2 text-xs">
+        LoanPay Logic Network:{" "}
+        <a href="https://loanpaylogic.com" className="underline hover:text-white">FBA &amp; Business Calculators</a>{" "}
+        &middot; <a href="https://tax.loanpaylogic.com" className="underline hover:text-white">Self-Employment Tax</a>{" "}
+        &middot; <a href="https://career.loanpaylogic.com" className="underline hover:text-white">Career Guides</a>{" "}
+        &middot; <a href="https://credit.loanpaylogic.com" className="underline hover:text-white">Credit</a>
       </p>
     </footer>
   );
