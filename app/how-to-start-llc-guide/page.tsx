@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
-import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
+import { Byline, GuideSchema } from "../../components/schema";
 
 export const metadata: Metadata = {
   title: "How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business",
@@ -22,6 +22,29 @@ const STEPS = [
   "Register for state tax accounts, business licenses, and local permits before your first sale or hire.",
 ];
 
+const guideFaqs: { question: string; answer: string }[] = [
+  {
+    question: "Should I form in Delaware or Nevada instead of my home state?",
+    answer:
+      "Usually no. A foreign LLC must still register where you operate, so you pay two states. Out-of-state formation helps only in narrow cases — ask an attorney.",
+  },
+  {
+    question: "How long does formation take?",
+    answer:
+      "Online filings often confirm within days; mailed filings can take several weeks. Check your secretary of state for current processing times.",
+  },
+  {
+    question: "Do I need a lawyer to form an LLC?",
+    answer:
+      "Most single-member LLCs file fine without one, but multi-member LLCs benefit from attorney review of the operating agreement.",
+  },
+  {
+    question: "Does an LLC save taxes by itself?",
+    answer:
+      "No. Tax treatment follows elections, not the LLC label. Savings come from S-corp elections or deductions, not formation alone.",
+  },
+];
+
 export default function StartLlcPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
@@ -38,6 +61,7 @@ export default function StartLlcPage() {
           agent, EIN, agreement, bank account, and licenses — with realistic costs and timelines.
         </p>
         <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline updated="October 2026" />
       </section>
       <p className="mt-4 text-center text-xs text-slate-400">
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
@@ -211,17 +235,11 @@ export default function StartLlcPage() {
           </p>
         </section>
       </article>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: "How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business", description: "Start an LLC in 2026 the right way: name search, articles, registered agent, EIN, operating agreement, bank account, and licenses — with costs and timelines.", url: "https://business.loanpaylogic.com/how-to-start-llc-guide" })) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([{"question":"Should I form in Delaware or Nevada instead of my home state?","answer":"Usually no. A foreign LLC must still register where you operate, so you pay two states. Out-of-state formation helps only in narrow cases — ask an attorney."}, {"question":"How long does formation take?","answer":"Online filings often confirm within days; mailed filings can take several weeks. Check your secretary of state for current processing times."}, {"question":"Do I need a lawyer to form an LLC?","answer":"Most single-member LLCs file fine without one, but multi-member LLCs benefit from attorney review of the operating agreement."}, {"question":"Does an LLC save taxes by itself?","answer":"No. Tax treatment follows elections, not the LLC label. Savings come from S-corp elections or deductions, not formation alone."}])) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", url: "https://business.loanpaylogic.com" }, { name: "How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business", url: "https://business.loanpaylogic.com/how-to-start-llc-guide" }])) }}
+      <GuideSchema
+        title="How to Start an LLC in 2026: Step-by-Step Guide | LoanPay Business"
+        description="Start an LLC in 2026 the right way: name search, articles, registered agent, EIN, operating agreement, bank account, and licenses — with costs and timelines."
+        slug="how-to-start-llc-guide"
+        faqs={guideFaqs}
       />
       <p className="mt-6 text-center text-xs text-slate-500">
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
