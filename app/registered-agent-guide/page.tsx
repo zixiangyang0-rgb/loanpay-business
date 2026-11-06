@@ -159,6 +159,23 @@ export default function AgentPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/how-to-start-llc-guide">How to Start an LLC</Link> — appoint the agent at step two of formation.
+            </li>
+            <li>
+              <Link className="underline" href="/operating-agreement-basics">Operating Agreement Basics</Link> — name the agent in company records.
+            </li>
+            <li>
+              <Link className="underline" href="/dba-registration-guide">DBA Registration Guide</Link> — trade names filed in the same offices.
+            </li>
+            <li>
+              <Link className="underline" href="/how-much-does-it-cost-to-start-llc-by-state">LLC Cost by State</Link> — agent fees folded into state totals.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

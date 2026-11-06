@@ -180,6 +180,23 @@ export default function ScorpElectionPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/llc-vs-s-corp-taxes">LLC vs. S Corp Taxes</Link> — the savings math before you elect.
+            </li>
+            <li>
+              <Link className="underline" href="/payroll-taxes-employer-guide">Payroll Taxes Employer Guide</Link> — owner salary means running payroll.
+            </li>
+            <li>
+              <Link className="underline" href="/small-business-tax-calendar-2026">Small Business Tax Calendar 2026</Link> — election and S-corp deadlines.
+            </li>
+            <li>
+              <Link className="underline" href="/operating-agreement-basics">Operating Agreement Basics</Link> — update the agreement after electing.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

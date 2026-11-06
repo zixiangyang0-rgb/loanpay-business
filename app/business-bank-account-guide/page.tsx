@@ -161,6 +161,23 @@ export default function BankAccountPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/how-to-start-llc-guide">How to Start an LLC</Link> — the full formation sequence before you open the account.
+            </li>
+            <li>
+              <Link className="underline" href="/ein-application-guide">EIN Application Guide</Link> — get the free IRS number banks ask for.
+            </li>
+            <li>
+              <Link className="underline" href="/bookkeeping-basics-guide">Bookkeeping Basics Guide</Link> — keep the new account reconciled from day one.
+            </li>
+            <li>
+              <Link className="underline" href="/business-credit-cards-basics">Business Credit Cards Basics</Link> — add cards without mixing personal spending.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -166,6 +166,23 @@ export default function SbaMicroPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/sba-7a-loans-guide">SBA 7(a) Loans Guide</Link> — the larger SBA program to graduate into.
+            </li>
+            <li>
+              <Link className="underline" href="/startup-costs-checklist">Startup Costs Checklist</Link> — budget the launch the microloan funds.
+            </li>
+            <li>
+              <Link className="underline" href="/business-credit-score-guide">Business Credit Score Guide</Link> — build credit from the microloan up.
+            </li>
+            <li>
+              <Link className="underline" href="/equipment-financing-guide">Equipment Financing Guide</Link> — gear buys microloans often cover.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

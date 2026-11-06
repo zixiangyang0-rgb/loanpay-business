@@ -223,6 +223,23 @@ export default function StartLlcPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/how-much-does-it-cost-to-start-llc-by-state">LLC Cost by State</Link> — filing fees and timelines for your state.
+            </li>
+            <li>
+              <Link className="underline" href="/registered-agent-guide">Registered Agent Guide</Link> — duties, rules, and service options.
+            </li>
+            <li>
+              <Link className="underline" href="/ein-application-guide">EIN Application Guide</Link> — free IRS filing without the scam sites.
+            </li>
+            <li>
+              <Link className="underline" href="/operating-agreement-basics">Operating Agreement Basics</Link> — clauses every LLC needs signed.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

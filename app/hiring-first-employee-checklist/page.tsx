@@ -188,6 +188,23 @@ export default function HiringPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/payroll-taxes-employer-guide">Payroll Taxes Employer Guide</Link> — FICA, FUTA, SUTA, and withholding setup.
+            </li>
+            <li>
+              <Link className="underline" href="/contractors-vs-employees-1099-guide">Contractors vs. Employees</Link> — classify the worker correctly first.
+            </li>
+            <li>
+              <Link className="underline" href="/business-insurance-types-guide">Business Insurance Types Guide</Link> — workers comp and EPLI for hire one.
+            </li>
+            <li>
+              <Link className="underline" href="/ein-application-guide">EIN Application Guide</Link> — the free IRS number payroll requires.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

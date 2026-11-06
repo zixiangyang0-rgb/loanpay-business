@@ -166,6 +166,23 @@ export default function LicensesPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/how-to-start-llc-guide">How to Start an LLC</Link> — where licenses fit in the formation sequence.
+            </li>
+            <li>
+              <Link className="underline" href="/dba-registration-guide">DBA Registration Guide</Link> — trade names often filed alongside licenses.
+            </li>
+            <li>
+              <Link className="underline" href="/business-insurance-types-guide">Business Insurance Types Guide</Link> — coverage many permits require.
+            </li>
+            <li>
+              <Link className="underline" href="/how-much-does-it-cost-to-start-llc-by-state">LLC Cost by State</Link> — fee schedules that include license costs.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

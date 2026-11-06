@@ -168,6 +168,23 @@ export default function EquipmentPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/sba-7a-loans-guide">SBA 7(a) Loans Guide</Link> — equipment as an eligible SBA loan use.
+            </li>
+            <li>
+              <Link className="underline" href="/business-line-of-credit-guide">Business Line of Credit Guide</Link> — revolving credit versus equipment term loans.
+            </li>
+            <li>
+              <Link className="underline" href="/sba-microloans-guide">SBA Microloans Guide</Link> — smaller equipment buys up to $50,000.
+            </li>
+            <li>
+              <Link className="underline" href="/startup-costs-checklist">Startup Costs Checklist</Link> — budget gear before you borrow for it.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

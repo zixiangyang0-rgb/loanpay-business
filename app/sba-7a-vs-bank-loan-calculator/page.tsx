@@ -292,6 +292,23 @@ export default function Sba7aVsBankPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/sba-7a-loans-guide">SBA 7(a) Loans Guide</Link> — rates, limits, and how to apply.
+            </li>
+            <li>
+              <Link className="underline" href="/business-line-of-credit-guide">Business Line of Credit Guide</Link> — when revolving beats term debt.
+            </li>
+            <li>
+              <Link className="underline" href="/equipment-financing-guide">Equipment Financing Guide</Link> — loans versus leases for equipment.
+            </li>
+            <li>
+              <Link className="underline" href="/sba-microloans-guide">SBA Microloans Guide</Link> — smaller SBA loans up to $50,000.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -155,6 +155,23 @@ export default function FactoringPage() {
             </details>
           </div>
         </section>
+        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p className="text-sm font-semibold">Keep reading</p>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
+            <li>
+              <Link className="underline" href="/business-line-of-credit-guide">Business Line of Credit Guide</Link> — revolving credit versus selling invoices.
+            </li>
+            <li>
+              <Link className="underline" href="/sba-7a-loans-guide">SBA 7(a) Loans Guide</Link> — cheaper term funding for steady businesses.
+            </li>
+            <li>
+              <Link className="underline" href="/sba-microloans-guide">SBA Microloans Guide</Link> — small working-capital loans up to $50,000.
+            </li>
+            <li>
+              <Link className="underline" href="/bookkeeping-basics-guide">Bookkeeping Basics Guide</Link> — invoice discipline that lowers factoring costs.
+            </li>
+          </ul>
+        </nav>
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
