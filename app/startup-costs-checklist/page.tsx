@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import OfficialBox from "../../components/OfficialBox";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -167,6 +168,20 @@ export default function StartupCostsPage() {
             </details>
           </div>
         </section>
+        <OfficialBox
+          items={[
+            {
+              label: "SBA: Write your business plan",
+              href: "https://www.sba.gov/business-guide/plan-your-business/write-your-business-plan",
+              description: "SBA planning guide to turn this budget into a fundable plan.",
+            },
+            {
+              label: "SCORE free mentoring & workshops",
+              href: "https://www.score.org/",
+              description: "SBA-backed nonprofit with free mentors and local workshops for founders.",
+            },
+          ]}
+        />
         <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">

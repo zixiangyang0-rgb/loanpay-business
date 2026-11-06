@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import OfficialBox from "../../components/OfficialBox";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -163,6 +164,20 @@ export default function EinGuidePage() {
             </details>
           </div>
         </section>
+        <OfficialBox
+          items={[
+            {
+              label: "IRS: Apply for an EIN online",
+              href: "https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online",
+              description: "Free IRS online assistant — instant EIN, never pay a third-party fee.",
+            },
+            {
+              label: "SCORE free mentoring & workshops",
+              href: "https://www.score.org/",
+              description: "SBA-backed nonprofit with free mentors and local workshops for founders.",
+            },
+          ]}
+        />
         <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">

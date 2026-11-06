@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
+import OfficialBox from "../../components/OfficialBox";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -161,6 +162,20 @@ export default function BankAccountPage() {
             </details>
           </div>
         </section>
+        <OfficialBox
+          items={[
+            {
+              label: "FDIC: Deposit insurance",
+              href: "https://www.fdic.gov/",
+              description: "Federal insurer — confirm your bank's coverage before large deposits.",
+            },
+            {
+              label: "Chase Business Banking",
+              href: "https://www.chase.com/business",
+              description: "Major bank hub for business checking, cards, and lending options.",
+            },
+          ]}
+        />
         <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
