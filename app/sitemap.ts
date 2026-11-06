@@ -14,10 +14,12 @@ const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "mont
   { url: "/dba-registration-guide", priority: 0.8, changeFrequency: "monthly" },
   { url: "/registered-agent-guide", priority: 0.8, changeFrequency: "monthly" },
   { url: "/operating-agreement-basics", priority: 0.8, changeFrequency: "monthly" },
+  { url: "/how-much-does-it-cost-to-start-llc-by-state", priority: 0.8, changeFrequency: "monthly" },
   // Funding
   { url: "/business-credit-cards-basics", priority: 0.8, changeFrequency: "monthly" },
   { url: "/sba-7a-loans-guide", priority: 0.9, changeFrequency: "monthly" },
   { url: "/sba-microloans-guide", priority: 0.8, changeFrequency: "monthly" },
+  { url: "/sba-7a-vs-bank-loan-calculator", priority: 0.8, changeFrequency: "monthly" },
   { url: "/business-line-of-credit-guide", priority: 0.8, changeFrequency: "monthly" },
   { url: "/invoice-factoring-explained", priority: 0.8, changeFrequency: "monthly" },
   { url: "/equipment-financing-guide", priority: 0.8, changeFrequency: "monthly" },
