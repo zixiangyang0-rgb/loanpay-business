@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
 
 export default function SbaMicroPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           funding &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           SBA Microloans Guide: Small Money, Real Terms
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           When $10,000–$50,000 is exactly enough: nonprofit lenders, hands-on coaching, and rates
           between roughly 8% and 13% for borrowers banks pass over.
         </p>
@@ -34,7 +35,7 @@ export default function SbaMicroPage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
         <section>
           <h2 className="text-xl font-bold text-white">How microloans work</h2>
           <p className="mt-3">
@@ -73,7 +74,7 @@ export default function SbaMicroPage() {
             instead. Because each intermediary sets its own application and may serve only certain
             counties, start with the SBA microloan intermediary list for your state.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="Microloan vs. neighboring options. — scroll horizontally to see all columns">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Microloan vs. neighboring options.
@@ -149,20 +150,20 @@ export default function SbaMicroPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">How fast can I get the money?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">How fast can I get the money?</summary>
               <p className="mt-1">Often a few weeks from complete application to funding — faster than 7(a), slower than a card or merchant advance.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Can I get more than $50,000?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Can I get more than $50,000?</summary>
               <p className="mt-1">Not from this program — $50,000 is the hard cap. Larger needs belong in 7(a) or 504 territory.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Do I need perfect credit?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Do I need perfect credit?</summary>
               <p className="mt-1">No. Intermediaries weigh character, cash flow, and coaching participation alongside credit — that is the program&apos;s point.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Can microloans refinance debt?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Can microloans refinance debt?</summary>
               <p className="mt-1">Generally no. They fund new working capital and assets; refinancing belongs in 7(a) or conventional workouts.</p>
             </details>
           </div>
@@ -181,7 +182,7 @@ export default function SbaMicroPage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -226,6 +227,6 @@ export default function SbaMicroPage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "About LoanPay Business",
   description:
     "Learn what business.loanpaylogic.com covers: free educational guides for starting, funding, and running a US small business.",
+  alternates: {
+    canonical: "https://business.loanpaylogic.com/about",
+  },
 };
 
 export default function AboutPage() {

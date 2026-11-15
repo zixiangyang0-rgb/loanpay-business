@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use | LoanPay Business",
   description: "Terms of use for business.loanpaylogic.com educational small-business guides.",
+  alternates: {
+    canonical: "https://business.loanpaylogic.com/terms",
+  },
 };
 
 export default function TermsPage() {

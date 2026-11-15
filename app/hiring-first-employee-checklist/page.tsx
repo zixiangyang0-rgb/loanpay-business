@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -26,15 +27,15 @@ const CHECKLIST = [
 
 export default function HiringPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           taxes &amp; payroll &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           Hiring Your First Employee Checklist
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           Eight steps from EIN to first paycheck: accounts, paperwork, insurance, and payroll —
           plus what a $50,000 salary really costs.
         </p>
@@ -45,8 +46,8 @@ export default function HiringPage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
+        <section className="biz-article-checklist rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">The first-hire checklist</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5">
             {CHECKLIST.map((step) => (
@@ -100,7 +101,7 @@ export default function HiringPage() {
             </Link>
             .
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="Loaded-cost build for a $50,000 first hire (illustrative state rates). — scroll horizontally to see all columns">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Loaded-cost build for a $50,000 first hire (illustrative state rates).
@@ -171,20 +172,20 @@ export default function HiringPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Employee or contractor for the first role?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Employee or contractor for the first role?</summary>
               <p className="mt-1">Scheduled, supervised, core-work roles are usually employees. Project-based specialists with their own clients are often contractors — but test the facts.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">How fast must I file the I-9?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">How fast must I file the I-9?</summary>
               <p className="mt-1">Section 1 by day one, Section 2 verification within 3 business days of the start date. Keep I-9s separate from personnel files.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Do I need workers&apos; comp for one part-timer?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Do I need workers&apos; comp for one part-timer?</summary>
               <p className="mt-1">In most states, yes from the first employee-hour, with narrow exemptions. Confirm with your state workers&apos; comp board before day one.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Payroll provider or DIY?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Payroll provider or DIY?</summary>
               <p className="mt-1">A provider ($40–$150/month) is usually worth it from hire one — filings, deposits, and W-2s handled beats learning penalties firsthand.</p>
             </details>
           </div>
@@ -203,7 +204,7 @@ export default function HiringPage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -248,6 +249,6 @@ export default function HiringPage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

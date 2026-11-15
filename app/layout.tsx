@@ -24,12 +24,21 @@ export const metadata: Metadata = {
     siteName: "LoanPay Business",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/photos/business.webp",
+        width: 1600,
+        height: 1165,
+        alt: "Bakery shop pastry display counter, no people",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LoanPay Business | Start, Fund, and Run a Small Business",
     description:
       "Formation, funding, taxes, payroll, and operations guides for US small businesses — free educational content.",
+    images: ["/photos/business.webp"],
   },
   other: {
     "google-adsense-account": "ca-pub-4906207495792820",

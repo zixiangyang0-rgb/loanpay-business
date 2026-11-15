@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -48,15 +49,15 @@ const FAQS = [
 
 export default function Sba7aVsBankPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           funding &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           SBA 7(a) vs Bank Loan Calculator: True Cost Compared
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           Same borrower, same $350,000 request, two very different offers. This guide compares
           rates, guarantee fees, monthly payments, speed, and approval odds so you can see which
           loan is genuinely cheaper for your timeline.
@@ -68,7 +69,7 @@ export default function Sba7aVsBankPage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
         <section>
           <h2 className="text-xl font-bold text-white">The one difference that drives everything</h2>
           <p className="mt-3">
@@ -111,7 +112,7 @@ export default function Sba7aVsBankPage() {
             approves ten years and stretches real estate to 25 years, which cuts the monthly payment
             dramatically even when the headline rate looks identical.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="SBA 7(a) versus conventional bank loan, typical 2026 ranges. Confirm Prime and fees with your lender. — scroll horizontally to see all columns">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 SBA 7(a) versus conventional bank loan, typical 2026 ranges. Confirm Prime and fees with your lender.
@@ -267,28 +268,28 @@ export default function Sba7aVsBankPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Is an SBA 7(a) loan cheaper than a conventional bank loan?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Is an SBA 7(a) loan cheaper than a conventional bank loan?</summary>
               <p className="mt-1">It depends on how long you hold the loan. The SBA guarantee fee adds 2 to 3.75 percent of the guaranteed portion upfront plus an annual service fee near 0.55 percent, so a short loan you repay in two years can cost more than a plain bank term loan. Held for seven to ten years, the longer SBA term usually lowers the monthly payment enough to outweigh the fees.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">How much is the SBA guarantee fee in 2026?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">How much is the SBA guarantee fee in 2026?</summary>
               <p className="mt-1">For most standard 7(a) loans the upfront fee is tiered by loan size and maturity: roughly 2 percent of the guaranteed portion on the smallest loans, rising to 3 to 3.75 percent on larger multi-year loans above $150,000, plus an ongoing fee near 0.55 percent of the outstanding guaranteed balance each year. The fee can usually be financed into the loan.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Which is faster: SBA 7(a) or a bank loan?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Which is faster: SBA 7(a) or a bank loan?</summary>
               <p className="mt-1">A conventional bank loan is almost always faster, often closing in two to six weeks, because only the bank underwrites it. A standard 7(a) typically takes 45 to 90 days because the lender documents SBA eligibility on top of credit underwriting. SBA Express shortens that to about 30 to 45 days.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Can I get a bank loan if the SBA turns me down?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Can I get a bank loan if the SBA turns me down?</summary>
               <p className="mt-1">Yes, and the reverse is also common. Banks decline SBA proposals that fail eligibility rules such as size standards or excluded industries, but the same borrower can still win a conventional loan with strong collateral and cash flow. Conversely, banks approve many 7(a) borrowers they would reject conventionally because the 75 to 85 percent federal guarantee absorbs most of the loss.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Do both loan types require a personal guarantee and collateral?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Do both loan types require a personal guarantee and collateral?</summary>
               <p className="mt-1">In practice, yes for most small businesses. SBA loans require personal guarantees from owners of 20 percent or more and a lien on business assets. Conventional bank loans impose the same or stricter requirements, often adding blanket liens or larger down payments of 20 to 30 percent compared with roughly 10 percent on many 7(a) deals.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">When should I choose the bank loan instead of the SBA?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">When should I choose the bank loan instead of the SBA?</summary>
               <p className="mt-1">Choose the bank loan when you qualify for a competitive fixed rate, need money in under a month, will repay within three to five years, or want to avoid SBA paperwork and fees. Choose the 7(a) when you need a 10 to 25 year term, a lower down payment, weaker collateral, or approval strength that only the federal guarantee can provide.</p>
             </details>
           </div>
@@ -307,7 +308,7 @@ export default function Sba7aVsBankPage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -352,6 +353,6 @@ export default function Sba7aVsBankPage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

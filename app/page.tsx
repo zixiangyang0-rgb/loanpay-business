@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../components/AdSlot";
+import BriefingTabs from "../components/BriefingTabs";
 import { orgJsonLd, websiteJsonLd } from "../lib/schema";
 
 export const metadata: Metadata = {
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
 };
 
 type Card = { title: string; description: string; href: string; badge: string };
-type Cluster = { id: string; heading: string; blurb: string; cards: Card[] };
+type Cluster = { id: string; tab: string; heading: string; blurb: string; cards: Card[] };
 
 const clusters: Cluster[] = [
   {
     id: "formation",
+    tab: "Formation",
     heading: "Formation — set it up right",
     blurb: "Choose a structure, register it, and open the right accounts before the first sale.",
     cards: [
@@ -72,10 +74,17 @@ const clusters: Cluster[] = [
         href: "/operating-agreement-basics",
         badge: "Guide",
       },
+      {
+        title: "LLC Cost by State",
+        description: "Filing fees, annual reports, agents, and first-year budgets compared state by state.",
+        href: "/how-much-does-it-cost-to-start-llc-by-state",
+        badge: "Guide",
+      },
     ],
   },
   {
     id: "funding",
+    tab: "Funding",
     heading: "Funding — borrow smart",
     blurb: "SBA loans, credit lines, cards, and asset financing compared with real cost math.",
     cards: [
@@ -133,10 +142,17 @@ const clusters: Cluster[] = [
         href: "/how-to-value-small-business",
         badge: "Guide",
       },
+      {
+        title: "SBA vs. Bank Loan Calculator",
+        description: "Guarantee fees, terms, and monthly payments compared on a $350,000 example.",
+        href: "/sba-7a-vs-bank-loan-calculator",
+        badge: "Calculator",
+      },
     ],
   },
   {
     id: "taxes",
+    tab: "Taxes & payroll",
     heading: "Taxes & Payroll — stay compliant",
     blurb: "Calendars, payroll math, hiring, and deduction rules for 2026.",
     cards: [
@@ -180,6 +196,7 @@ const clusters: Cluster[] = [
   },
   {
     id: "running",
+    tab: "Running it",
     heading: "Running it — protect and grow",
     blurb: "Insurance and operations essentials once money is moving.",
     cards: [
@@ -194,6 +211,25 @@ const clusters: Cluster[] = [
 ];
 
 export default function HomePage() {
+  const heroImageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": "https://business.loanpaylogic.com/#hero-image",
+    contentUrl: "https://business.loanpaylogic.com/photos/business.webp",
+    url: "https://business.loanpaylogic.com/photos/business.webp",
+    width: 1600,
+    height: 1165,
+    caption: "Bakery shop pastry display counter, no people",
+    creator: {
+      "@type": "Person",
+      name: "W.carter",
+      url: "https://commons.wikimedia.org/wiki/User:W.carter",
+    },
+    creditText: "W.carter, CC BY-SA 4.0, via Wikimedia Commons",
+    license: "https://creativecommons.org/licenses/by-sa/4.0/",
+    acquireLicensePage:
+      "https://commons.wikimedia.org/wiki/File:Cake_display_cases_with_cakes_and_pastries_in_Brastads_Bageri_1.jpg",
+  };
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-16">
       <script
@@ -204,57 +240,41 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
       />
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-14 text-center sm:px-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
-          business.loanpaylogic.com
-        </p>
-        <h1 className="hero-title mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">
-          Start, Fund, and Run Your Small Business
-        </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-300">
-          LoanPay Business turns confusing formation, funding, tax, and payroll rules into short,
-          friendly guides with worked examples. Learn how LLCs work, what SBA loans cost, when
-          payroll taxes are due, and how to keep clean books — no signup required.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            href="/how-to-start-llc-guide"
-            className="rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-amber-200"
-          >
-            Start your LLC guide
-          </Link>
-          <Link
-            href="/sba-7a-loans-guide"
-            className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-white/30"
-          >
-            Explore SBA loans
-          </Link>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(heroImageJsonLd) }}
+      />
+      <section className="biz-scope" aria-label="Operator briefing">
+        <div className="biz-memohead">
+          <p className="biz-eyebrow">Operator briefing · business.loanpaylogic.com</p>
+          <h1 className="biz-title">Start, Fund, and Run Your Small Business</h1>
+          <p className="biz-lede">
+            LoanPay Business turns confusing formation, funding, tax, and payroll rules into short,
+            friendly guides with worked examples. Learn how LLCs work, what SBA loans cost, when
+            payroll taxes are due, and how to keep clean books — no signup required.
+          </p>
         </div>
+        <figure className="biz-figure">
+          <img
+            src="/photos/business.webp"
+            width={1600}
+            height={1165}
+            alt="Bakery shop pastry display counter, no people"
+            loading="lazy"
+          />
+          <figcaption>
+            Bakery counter (cropped derivative of the licensed original). Photo:{" "}
+            <a href="https://commons.wikimedia.org/wiki/File:Cake_display_cases_with_cakes_and_pastries_in_Brastads_Bageri_1.jpg">
+              W.carter, CC BY-SA 4.0, via Wikimedia Commons
+            </a>
+            . License:{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+          </figcaption>
+        </figure>
+        <BriefingTabs groups={clusters} />
       </section>
 
       <AdSlot format="display" slot="TODO-business-display-home" />
-
-      {clusters.map((cluster) => (
-        <section key={cluster.id} className="mt-12">
-          <h2 className="text-2xl font-bold">{cluster.heading}</h2>
-          <p className="mt-2 text-sm text-slate-400">{cluster.blurb}</p>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {cluster.cards.map((tool) => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="glass-card block rounded-2xl p-6 transition hover:border-amber-200/30"
-              >
-                <span className="inline-block rounded-full border border-amber-200/30 px-3 py-1 text-xs font-medium text-amber-200">
-                  {tool.badge}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-white">{tool.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">{tool.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      ))}
 
       <section className="glass-card mt-12 rounded-2xl p-8">
         <h2 className="text-2xl font-bold">Why plan formation, funding, and payroll together?</h2>

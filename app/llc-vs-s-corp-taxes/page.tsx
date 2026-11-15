@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
 
 export default function LlcVsScorpPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           formation &amp; tax &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           LLC vs. S Corp Taxes: The 2026 Comparison
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           An LLC is a legal shell; S corp is a tax election inside it. The real question is
           whether payroll tax on a reasonable salary plus compliance costs beats paying
           self-employment tax on everything.
@@ -35,7 +36,7 @@ export default function LlcVsScorpPage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
         <section>
           <h2 className="text-xl font-bold text-white">The core mechanics</h2>
           <p className="mt-3">
@@ -71,7 +72,7 @@ export default function LlcVsScorpPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white">Side-by-side comparison</h2>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="Default LLC taxation vs. S corp election for an owner-operator. — scroll horizontally to see all columns">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Default LLC taxation vs. S corp election for an owner-operator.
@@ -153,20 +154,20 @@ export default function LlcVsScorpPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Do I form an S corp or elect it?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Do I form an S corp or elect it?</summary>
               <p className="mt-1">You form an LLC or corporation under state law, then elect S tax treatment with Form 2553. There is no separate federal &quot;S corp&quot; to incorporate.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">What is a reasonable salary?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">What is a reasonable salary?</summary>
               <p className="mt-1">What comparable employers pay for similar work in your market — often 30–50% of profit for service firms. Document comps; the IRS enforces this.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Can I switch back if it does not pay?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Can I switch back if it does not pay?</summary>
               <p className="mt-1">Yes, you can revoke the election, but generally must wait several years before re-electing. Model carefully before filing.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Does S status avoid income tax?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Does S status avoid income tax?</summary>
               <p className="mt-1">No. It can reduce payroll/SE tax on distributions, but all profit still faces income tax on the owners&apos; returns.</p>
             </details>
           </div>
@@ -185,7 +186,7 @@ export default function LlcVsScorpPage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -231,6 +232,6 @@ export default function LlcVsScorpPage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

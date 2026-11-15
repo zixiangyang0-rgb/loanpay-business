@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
 
 export default function BizInsurancePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           running it &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           Business Insurance Types Guide
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           Transfer the risks you cannot afford: liability, property, people, and data. What each
           policy covers, what it costs, and how to stack them without overlap.
         </p>
@@ -34,7 +35,7 @@ export default function BizInsurancePage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
         <section>
           <h2 className="text-xl font-bold text-white">The core policies, decoded</h2>
           <p className="mt-3">
@@ -68,7 +69,7 @@ export default function BizInsurancePage() {
             trims premiums. Re-shop every 2–3 years with your loss runs in hand rather than
             auto-renewing blind.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="Policy stack for a typical small operation. — scroll horizontally to see all columns">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Policy stack for a typical small operation.
@@ -157,20 +158,20 @@ export default function BizInsurancePage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Does my LLC make insurance unnecessary?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Does my LLC make insurance unnecessary?</summary>
               <p className="mt-1">No. The LLC shields personal assets from business debts; insurance pays the claims themselves. You need both.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Home-based — covered by homeowners?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Home-based — covered by homeowners?</summary>
               <p className="mt-1">Rarely for business liability, inventory, or client injuries. Add a home-business endorsement or standalone BOP.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">What is a BOP?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">What is a BOP?</summary>
               <p className="mt-1">A Business Owner&apos;s Policy bundling general liability with commercial property — cheaper than buying each alone for qualifying small firms.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">How much liability is enough?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">How much liability is enough?</summary>
               <p className="mt-1">$1M per occurrence / $2M aggregate is the common small-business starting point; contracts and risk profile move it up.</p>
             </details>
           </div>
@@ -189,7 +190,7 @@ export default function BizInsurancePage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -234,6 +235,6 @@ export default function BizInsurancePage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

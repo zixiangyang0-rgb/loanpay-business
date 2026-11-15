@@ -191,3 +191,580 @@ input[type="range"]::-moz-range-thumb {
 .recharts-tooltip-wrapper {
   outline: none;
 }
+
+/* Operator Briefing (business V2) — scoped kraft memo tokens.
+   Applies ONLY inside .biz-scope (home memo + tabs + sidebar).
+   Dark islands (.glass-card/.glass-panel) untouched; no global inversion. */
+.biz-scope {
+  --biz-paper: #f7f3e8;
+  --biz-card: #fffdf6;
+  --biz-side: #f2ead6;
+  --biz-ink: #2a241c;
+  --biz-muted: #6b5f4c;
+  --biz-line: #dccfb4;
+  --biz-accent: #6b4e1f;
+  background: var(--biz-paper);
+  color: var(--biz-ink);
+  border: 1px solid var(--biz-line);
+  border-radius: 16px;
+}
+
+.biz-memohead {
+  padding: 20px 22px 0;
+}
+
+.biz-memohead a,
+.biz-figure figcaption a,
+.biz-side-link {
+  color: var(--biz-accent);
+}
+
+.biz-memohead a:focus-visible,
+.biz-tab:focus-visible,
+.biz-card:focus-visible,
+.biz-side-link:focus-visible {
+  outline: 2px solid var(--biz-accent);
+  outline-offset: 2px;
+}
+
+.biz-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--biz-muted);
+}
+
+.biz-title {
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin: 8px 0 0;
+  color: var(--biz-ink);
+}
+
+.biz-lede {
+  margin-top: 10px;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--biz-ink);
+}
+
+.biz-figure {
+  margin: 16px 22px 0;
+  border: 1px solid var(--biz-line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--biz-card);
+}
+
+.biz-figure img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+
+.biz-figure figcaption {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--biz-muted);
+  padding: 8px 12px;
+}
+
+.biz-tabs {
+  padding: 0 22px 22px;
+}
+
+.biz-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.biz-tab {
+  border: 1px solid var(--biz-line);
+  border-bottom: 0;
+  background: var(--biz-card);
+  color: var(--biz-ink);
+  border-radius: 8px 8px 0 0;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.biz-tab-active {
+  background: var(--biz-ink);
+  border-color: var(--biz-ink);
+  color: #fffdf6;
+}
+
+.biz-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  border: 1px solid var(--biz-line);
+  border-radius: 0 10px 10px 10px;
+  overflow: hidden;
+  background: var(--biz-card);
+}
+
+.biz-main {
+  padding: 20px;
+}
+
+.biz-group-heading {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--biz-ink);
+}
+
+.biz-group-blurb {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--biz-ink);
+}
+
+.biz-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.biz-card {
+  display: block;
+  border: 1px solid var(--biz-line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.biz-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -18px rgba(0, 0, 0, 0.25);
+}
+
+.biz-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--biz-line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--biz-accent);
+  background: var(--biz-side);
+}
+
+.biz-card-title {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--biz-ink);
+}
+
+.biz-card-desc {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--biz-muted);
+}
+
+.biz-side {
+  background: var(--biz-side);
+  border-left: 1px solid var(--biz-line);
+  padding: 20px 18px;
+}
+
+.biz-side-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--biz-muted);
+  margin: 0;
+}
+
+.biz-side-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--biz-ink);
+  margin: 12px 0 0;
+}
+
+.biz-side-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.biz-side-list li {
+  margin: 8px 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.biz-side-link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.biz-side-desc {
+  display: block;
+  font-size: 12.5px;
+  color: var(--biz-muted);
+}
+
+.biz-side-note {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--biz-muted);
+  margin: 14px 0 0;
+}
+
+@media (max-width: 880px) {
+  .biz-body {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-side {
+    border-left: 0;
+    border-top: 1px solid var(--biz-line);
+  }
+
+  .biz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-figure img {
+    height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biz-card {
+    transition: none;
+  }
+
+  .biz-card:hover {
+    transform: none;
+  }
+}
+
+/* Business interiors — Operator Briefing reading surface (scoped only).
+   Opt-in per guide via <MemoShell> (.biz-article). Kraft/sans applies
+   ONLY inside .biz-article. No dark calculator islands exist in this repo
+   (static articles only); navy body stays as surrounding surface, no global
+   body/* light inversion, no doc-level overflow changes. Sans headlines
+   keep this site distinct from guides Palatino serif. */
+.biz-article-hero {
+  background: #f7f3e8;
+  color: #2a241c;
+  border: 1px solid #dccfb4;
+  border-radius: 16px;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.biz-article-kicker {
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b5f4c;
+  margin: 0;
+}
+
+.biz-article-title {
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: #2a241c;
+  text-wrap: balance;
+}
+
+.biz-article-lede {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #2a241c;
+}
+
+.biz-article-body {
+  background: #f7f3e8;
+  color: #2a241c;
+  border: 1px solid #dccfb4;
+  border-radius: 16px;
+  backdrop-filter: none;
+  box-shadow: none;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.biz-article-body h2 {
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #2a241c;
+}
+
+.biz-article-body a {
+  color: #6b4e1f;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.biz-article-body a:focus-visible {
+  outline: 2px solid #6b4e1f;
+  outline-offset: 2px;
+}
+
+.biz-article-body table {
+  color: #2a241c;
+  font-variant-numeric: tabular-nums;
+}
+
+.biz-article-body thead tr {
+  color: #6b5f4c;
+}
+
+.biz-article-body caption {
+  color: #6b5f4c;
+}
+
+.biz-article-body [class*="border-white"] {
+  border-color: #dccfb4;
+}
+
+.biz-article-body [class*="bg-amber-100"] {
+  background-color: #fdf3dc;
+  border-color: #e0c98a;
+  color: #4a3a1a;
+}
+
+.biz-article-faq,
+.biz-article-checklist {
+  background: #fffdf6;
+  border: 1px solid #dccfb4;
+  border-radius: 12px;
+}
+
+.biz-article-faq summary {
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-weight: 700;
+  color: #2a241c;
+  cursor: pointer;
+}
+
+.biz-article-related {
+  background: #fffdf6;
+  border: 1px solid #dccfb4;
+  border-left: 3px solid #6b4e1f;
+  border-radius: 12px;
+  color: #2a241c;
+}
+
+.biz-article-related a {
+  color: #6b4e1f;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Scoped resets for dark-native islands living inside the kraft surface.
+   Copy/URLs/AdSlots untouched; only surface tokens remapped. */
+.biz-article section[aria-label="Official sources"] {
+  background: #fffdf6;
+  border: 1px solid #dccfb4;
+  color: #2a241c;
+}
+
+.biz-article section[aria-label="Official sources"] p {
+  color: #2a241c;
+}
+
+.biz-article section[aria-label="Official sources"] ul {
+  color: #2a241c;
+}
+
+.biz-article section[aria-label="Official sources"] a {
+  color: #6b4e1f;
+}
+
+.biz-article [class*="bg-amber-200"] {
+  background-color: #f2ead6;
+  border-color: #dccfb4;
+  color: #2a241c;
+}
+
+.biz-table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+  border: 1px solid #dccfb4;
+  border-radius: 12px;
+  background: #fffdf6;
+}
+
+/* Continuation (2026-11-15): interior table usability + kraft meta readability.
+   Scoped ONLY inside .biz-article islands; navy body + layout/consent untouched.
+   No copy/link/metadata/AdSlot/GuideSchema/formula changes. */
+
+/* Kraft islands: remap dark-native slate meta to memo muted for 4.5:1 body text.
+   Scoped to hero + body ONLY (direct .biz-article > p bylines sit on navy and
+   keep their dark-safe slate). */
+.biz-article-hero [class*="text-slate-"] {
+  color: #6b5f4c;
+}
+
+.biz-article-body [class*="text-slate-"] {
+  color: #6b5f4c;
+}
+
+/* Keyboard affordance: wrapped tables are horizontally scrollable at 375px;
+   give the scroll container a visible focus ring (page.tsx keeps no tabindex
+   by boundary — ring applies when focused via assistive tech / future opt-in). */
+.biz-table-wrap:focus-visible {
+  outline: 2px solid #6b4e1f;
+  outline-offset: 2px;
+}
+
+.biz-table-wrap:focus-within {
+  border-color: #6b4e1f;
+}
+
+@media (max-width: 560px) {
+  .biz-article-title {
+    font-size: 24px;
+  }
+
+  /* 375px edge: keep row labels visible while wide comparison tables scroll. */
+  .biz-table-wrap th:first-child,
+  .biz-table-wrap td:first-child {
+    position: sticky;
+    left: 0;
+    background: #fffdf6;
+    z-index: 1;
+    box-shadow: 1px 0 0 #dccfb4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biz-article {
+    scroll-behavior: auto;
+  }
+}
+
+/* ToolIsland + LedgerTable shell presentation — business-distinct (founder memo).
+   Scoped ONLY inside .biz-article / .biz-scope. Static presentation shell for
+   worked examples + comparison tables; NO interactivity invented (no inputs,
+   no state, no client JS). Reuses memo tokens so islands read as kraft paper,
+   distinct from navy ToolIslands in tax/retire/insurance (read-only refs).
+   Copy/URLs/AdSlots/formulas untouched; AdSlot min-heights own CLS. */
+.biz-tool {
+  background: #f7f3e8;
+  color: #2a241c;
+  border: 1px solid #dccfb4;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.biz-tool h2,
+.biz-tool h3 {
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-weight: 700;
+  color: #2a241c;
+}
+
+.biz-tool a {
+  color: #6b4e1f;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.biz-tool a:focus-visible,
+.biz-tool:focus-visible {
+  outline: 2px solid #6b4e1f;
+  outline-offset: 2px;
+}
+
+.biz-tool-result {
+  background: #fffdf6;
+  border: 1px solid #dccfb4;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 12px;
+  font-variant-numeric: tabular-nums;
+  min-height: 48px;
+}
+
+.biz-ledger {
+  overflow-x: auto;
+  max-width: 100%;
+  border: 1px solid #dccfb4;
+  border-radius: 12px;
+  background: #fffdf6;
+  color: #2a241c;
+  font-variant-numeric: tabular-nums;
+}
+
+.biz-ledger:focus-visible {
+  outline: 2px solid #6b4e1f;
+  outline-offset: 2px;
+}
+
+.biz-ledger:focus-within {
+  border-color: #6b4e1f;
+}
+
+.biz-ledger table {
+  color: #2a241c;
+  font-variant-numeric: tabular-nums;
+}
+
+.biz-ledger thead tr {
+  color: #6b5f4c;
+}
+
+.biz-ledger caption {
+  color: #6b5f4c;
+}
+
+@media (max-width: 560px) {
+  .biz-ledger th:first-child,
+  .biz-ledger td:first-child {
+    position: sticky;
+    left: 0;
+    background: #fffdf6;
+    z-index: 1;
+    box-shadow: 1px 0 0 #dccfb4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biz-tool,
+  .biz-ledger {
+    transition: none;
+    transform: none;
+  }
+}

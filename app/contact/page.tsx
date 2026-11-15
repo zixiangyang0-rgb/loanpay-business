@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact | LoanPay Business",
   description: "Contact the LoanPay Business editorial team with questions or corrections.",
+  alternates: {
+    canonical: "https://business.loanpaylogic.com/contact",
+  },
 };
 
 export default function ContactPage() {

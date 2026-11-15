@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
 
 export default function Sba7aPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           funding &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           SBA 7(a) Loans Guide: 2026 Essentials
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           The SBA&apos;s flagship program guarantees a slice of your bank loan — unlocking up to
           $5 million, longer terms, and lower down payments than conventional financing for
           borrowers who qualify.
@@ -35,7 +36,7 @@ export default function Sba7aPage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
         <section>
           <h2 className="text-xl font-bold text-white">What the 7(a) does and who qualifies</h2>
           <p className="mt-3">
@@ -67,7 +68,7 @@ export default function Sba7aPage() {
             lender&apos;s own origination and packaging charges. Fixed-rate options exist but are
             less common.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="Key 7(a) parameters for 2026 (confirm current Prime with your lender). — scroll horizontally to see all columns">
             <table className="w-full min-w-[480px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 Key 7(a) parameters for 2026 (confirm current Prime with your lender).
@@ -159,20 +160,20 @@ export default function Sba7aPage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">What credit score do I need?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">What credit score do I need?</summary>
               <p className="mt-1">The SBA sets no minimum, but most lenders look for roughly 650+ personally, with stronger cash flow offsetting thinner scores.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Can startups get 7(a) loans?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Can startups get 7(a) loans?</summary>
               <p className="mt-1">Yes, with a strong plan, equity injection (often ~10%), experience, and projections — though microloans may fit earlier stages.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Can I prepay without penalty?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Can I prepay without penalty?</summary>
               <p className="mt-1">Loans under 15 years generally have none; longer-maturity loans may carry a declining prepayment fee in early years.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Does the SBA take ownership?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Does the SBA take ownership?</summary>
               <p className="mt-1">No. The guarantee backs the lender; you keep full ownership and repay the bank, not the government.</p>
             </details>
           </div>
@@ -191,7 +192,7 @@ export default function Sba7aPage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -236,6 +237,6 @@ export default function Sba7aPage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

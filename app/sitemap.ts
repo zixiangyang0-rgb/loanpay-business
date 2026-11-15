@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 const BASE = "https://business.loanpaylogic.com";
 
-const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
-  { url: "/", priority: 1.0, changeFrequency: "weekly" },
+const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "monthly"; images?: string[] }[] = [
+  { url: "/", priority: 1.0, changeFrequency: "weekly", images: [`${BASE}/photos/business.webp`] },
   // Formation
   { url: "/how-to-start-llc-guide", priority: 0.9, changeFrequency: "monthly" },
   { url: "/llc-vs-s-corp-taxes", priority: 0.9, changeFrequency: "monthly" },
@@ -50,5 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
+    ...(route.images ? { images: route.images } : {}),
   }));
 }

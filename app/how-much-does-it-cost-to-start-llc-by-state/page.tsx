@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../../components/AdSlot";
 import OfficialBox from "../../components/OfficialBox";
+import MemoShell from "../../components/memo-shell";
 import { Byline, GuideSchema } from "../../components/schema";
 
 export const metadata: Metadata = {
@@ -59,15 +60,15 @@ const STATE_ROWS: { state: string; filing: string; recurring: string; notes: str
 
 export default function LlcCostByStatePage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
-      <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
+    <MemoShell>
+      <section className="biz-article-hero px-8 py-10 text-center">
+        <p className="biz-article-kicker">
           formation &middot; 2026
         </p>
-        <h1 className="hero-title mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+        <h1 className="biz-article-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">
           How Much Does It Cost to Start an LLC by State in 2026?
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="biz-article-lede mx-auto mt-4 max-w-2xl">
           The state filing fee is only the first line of your LLC budget. This guide breaks down
           filing fees, annual reports, registered agents, EINs, operating agreements, and licenses
           so you can price your own state correctly.
@@ -80,8 +81,8 @@ export default function LlcCostByStatePage() {
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only</a>
       </p>
 
-      <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
-        <section className="glass-card rounded-2xl p-6 sm:p-8">
+      <article className="biz-article-body rounded-2xl p-6 sm:p-8 space-y-8">
+        <section className="biz-article-checklist rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">The short answer: budget $300 to $1,000 for year one</h2>
           <p className="mt-3">
             A lean single-state LLC usually costs $300 to $1,000 in its first year. The state filing
@@ -159,7 +160,7 @@ export default function LlcCostByStatePage() {
             A low filing fee with a steep annual tax can cost more over three years than a higher
             filing fee with minimal upkeep.
           </p>
-          <div className="mt-4 overflow-x-auto rounded-xl border border-white/10">
+          <div className="biz-table-wrap mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="LLC cost shape by popular state. Confirm current amounts with each secretary of state. — scroll horizontally to see all columns">
             <table className="w-full min-w-[560px] text-left text-xs sm:text-sm">
               <caption className="px-4 py-3 text-left text-slate-400">
                 LLC cost shape by popular state. Confirm current amounts with each secretary of state.
@@ -239,28 +240,28 @@ export default function LlcCostByStatePage() {
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">What is the cheapest state to form an LLC in 2026?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">What is the cheapest state to form an LLC in 2026?</summary>
               <p className="mt-1">The sticker filing fee is lowest in a handful of states, but the cheapest state for you is almost always the state where you live and work. Forming out of state adds a second foreign registration, a second agent, and a second annual report, which wipes out any filing-fee savings.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">What does an LLC cost per year after formation?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">What does an LLC cost per year after formation?</summary>
               <p className="mt-1">Budget for the annual or biennial report, a registered agent if you hire one (often $100 to $300 per year), plus licenses and franchise taxes where they apply. Many founders spend $150 to $600 per year on recurring LLC upkeep before licenses.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Do I need a registered agent, and can I be my own?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Do I need a registered agent, and can I be my own?</summary>
               <p className="mt-1">Every state requires one. You can serve as your own agent if you have a physical address in the state and are available on business days, but many founders hire a service for privacy and to avoid missing legal mail. See our registered agent guide before you decide.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Is the EIN really free?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Is the EIN really free?</summary>
               <p className="mt-1">Yes. The IRS issues EINs free online in minutes. Never pay a third-party site for one. Our EIN application guide walks the official flow.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">Should I form in Delaware, Nevada, or Wyoming to save money?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">Should I form in Delaware, Nevada, or Wyoming to save money?</summary>
               <p className="mt-1">For most local businesses, no. You still must register as a foreign LLC where you operate, so you pay two states instead of one. Out-of-state formation helps only in narrow cases such as raising venture capital or holding companies, so talk to an attorney first.</p>
             </details>
-            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <summary className="cursor-pointer font-semibold text-white">What first-year budget should a single-member LLC plan?</summary>
+            <details className="biz-article-faq rounded-2xl p-5">
+              <summary className="font-semibold cursor-pointer">What first-year budget should a single-member LLC plan?</summary>
               <p className="mt-1">Plan $300 to $1,000 for a lean single-state LLC: filing fee, agent, licenses, operating agreement, and bank setup. Multi-member LLCs or regulated industries should add attorney review and higher license costs.</p>
             </details>
           </div>
@@ -279,7 +280,7 @@ export default function LlcCostByStatePage() {
             },
           ]}
         />
-        <nav aria-label="Related guides" className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <nav aria-label="Related guides" className="biz-article-related mt-8 rounded-2xl p-5">
           <p className="text-sm font-semibold">Keep reading</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed opacity-90">
             <li>
@@ -318,6 +319,6 @@ export default function LlcCostByStatePage() {
         By LoanPay Editorial · Updated October 2026 · Reviewed for accuracy ·{" "}
         <a href="/disclaimer" className="underline underline-offset-2">Educational use only — not legal or tax advice</a>
       </p>
-    </div>
+    </MemoShell>
   );
 }

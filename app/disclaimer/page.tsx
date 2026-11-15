@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Disclaimer | LoanPay Business",
   description:
     "Disclaimer for business.loanpaylogic.com: general small-business education only, not professional advice.",
+  alternates: {
+    canonical: "https://business.loanpaylogic.com/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {
